@@ -1,4 +1,4 @@
-#Epidemic Spread through Trade Routes in Medieval Europe
+# Epidemic Spread through Trade Routes in Medieval Europe
 
 ## Lucy Wilcox and Kaitlyn Keil
 
@@ -19,7 +19,7 @@ Our model could act as a predictive model and suggest the impact measures would 
 
 To begin, we will construct the graphs with connections for pilgrimage and trade. From there we will write a function to calculate the chance of a given city becoming infected, based on the connected cities and rules of infection. We plan to finish replicating their model within the first week and then move on to adding additional factors. Initially we plan on working together and pair programming the re-implementation of their model so we each understand the entirety of it well. This should better allow us to add additional factors to the model.
 
-##Bibliography 
+## Bibliography 
 Gómez, J. M. and Verdú, M. Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic. Sci. Rep. 7, 43467; doi: 10.1038/srep43467 (2017).
 Gomez and Verdu create an explanatory model of the networks between cities involved in the black plague to analyze which factors were correlated with the damaged caused. Particularly they analyzed the centrality and local transitivity in the trade and pilgrimage networks. They propose that there is a relation between the severity of the plague and these factors and suggest researching if this pattern holds in the present day.
  
