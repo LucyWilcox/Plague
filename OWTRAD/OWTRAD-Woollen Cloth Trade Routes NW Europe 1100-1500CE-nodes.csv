@@ -1,0 +1,19 @@
+NODE1,LONG1,LAT1,COUNTRY1,DETAIL,DATASTATUS,NODEID1,DATAID
+Aalst,4.0333,50.9333,BE,nkn,exact,3026,tmcBEm1100_008a
+Arras,2.7833,50.2833,FR,nkn,exact,3031,tmcBEm1100_017a
+Bruges,3.2333,51.2167,BE,nkn,exact,2702,tmcBEm1100_009a
+Brussels,4.3333,50.8333,BE,nkn,exact,2981,tmcBEm1100_007a
+Cologne,6.95,50.933334,DE,nkn,exact,411,tmcBEm1100_001a
+Douai,3.0667,50.3667,FR,nkn,exact,3030,tmcBEm1100_016a
+frk01-tmc051110,6.1,50.767,DE,?Aachen,exact,932,tmcBEm1100_002a
+Ghent,3.7167,51.05,BE,nkn,exact,2793,tmcBEm1100_009a
+Huy,5.2333,50.5167,DE,nkn,exact,3027,tmcBEm1100_012a
+Leuven,4.7,50.8833,BE,nkn,exact,2982,tmcBEm1100_006a
+Liege,5.566667,50.633331,DE,nkn,exact,432,tmcBEm1100_011a
+Maastricht ,5.6833,50.85,NL,nkn,exact,2983,tmcBEm1100_003a
+Mons,3.9333,50.45,DE,nkn,exact,3028,tmcBEm1100_014a
+Montreuil,1.7667,50.4667,FR,nkn,exact,3032,tmcBEm1100_017a
+Namur,4.8667,50.4667,DE,nkn,exact,2794,tmcBEm1100_013a
+St Truiden,5.2,50.8,BE,nkn,exact,3024,tmcBEm1100_004a
+Tienen,4.95,50.8,BE,nkn,exact,3025,tmcBEm1100_005a
+Valenciennes,3.5333,50.35,FR,nkn,exact,3029,tmcBEm1100_015a

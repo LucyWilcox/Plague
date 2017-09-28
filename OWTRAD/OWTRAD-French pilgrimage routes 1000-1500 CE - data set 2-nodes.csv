@@ -1,0 +1,59 @@
+NODE1,LONG1,LAT1,COUNTRY1,DETAIL,DATASTATUS,NODEID1,DATAID
+Arles,4.633333,43.666668,FR,nkn,exact,403,tmcFRm1500a_042a
+Aubrac,2.983333,44.616669,FR,nkn,exact,298,tmcFRm1500a_033a
+Avignon,4.816667,43.950001,FR,nkn,exact,404,tmcFRm1500a_041a
+Bordeaux,-0.566667,44.833332,FR,nkn,exact,408,tmcFRm1500a_008a
+Burgos,-3.7,42.349998,ES,nkn,exact,387,tmcFRm1500a_017a
+Carrion de los Condes,-4.6,42.333332,ES,nkn,exact,385,tmcFRm1500a_019a
+Clery,1.75,47.816666,FR,nkn,exact,1508,tmcFRm1500a_002a
+Conques,2.4,44.599998,FR,nkn,exact,285,tmcFRm1500a_034a
+Corunna,-8.383333,43.366669,ES,nkn,exact,390,tmcFRm1500a_024a
+Corunna,-8.383333,43.366669,ES/FR, ,exact,390,tmcFRm1500a_050a
+Dijon,5.016667,47.316666,FR,nkn,exact,1517,tmcFRm1500a_039a
+El Ferrol,-8.233333,43.483334,ES,nkn,exact,1512,tmcFRm1500a_022a
+Estella,-2.033333,42.666668,ES,nkn,exact,381,tmcFRm1500a_014a
+Jaca,-0.55,42.566666,ES/FR, ,exact,392,tmcFRm1500a_048a
+La Sauve Majeure,-0.316667,44.766666,FR,nkn,exact,1514,tmcFRm1500a_031a
+Langres,5.333333,47.866669,FR,nkn,exact,1516,tmcFRm1500a_038a
+Le Puy,3.883333,45.033333,FR,nkn,exact,281,tmcFRm1500a_033a
+Limoges,1.25,45.849998,FR,nkn,exact,433,tmcFRm1500a_030a
+loc01-tmc030512,0.366667,43.966667,FR,Condom?,exact,419,tmcFRm1500a_054a
+loc02-tmc030512,3.166667,46.983334,FR,Nevers?,exact,1523,tmcFRm1500a_051a
+loc03-tmc030512,-5.566667,42.599998,ES,Leon?,exact,377,tmcFRm1500a_020a
+loc04-tmc030512,0.583333,43.650002,FR,Auch?,exact,402,tmcFRm1500a_044a
+loc05-tmc030512,1.483333,46.233334,FR,La Souterraine?,exact,464,tmcFRm1500a_053a
+loc06-tmc030512,1.816667,46.599998,FR,Neuvy-St-Sepulcre?,exact,441,tmcFRm1500a_052a
+loc07-tmc030512,3.55,43.733334,FR,Saint-Guilhem?,exact,1507,tmcFRm1500a_057a
+loc08-tmc030512,1.633333,46.116669,FR,Benevent?,exact,1535,tmcFRm1500a_053a
+Logrono,-2.45,42.466667,ES,nkn,exact,376,tmcFRm1500a_015a
+Lyon,4.85,45.75,FR,nkn,exact,434,tmcFRm1500a_040a
+Metz,6.166667,49.133331,FR,nkn,exact,435,tmcFRm1500a_036a
+Moissac,1.083333,44.099998,FR,nkn,exact,437,tmcFRm1500a_035a
+Najera,-2.733333,42.416668,ES,nkn,exact,374,tmcFRm1500a_016a
+Oloron,-0.6,43.200001,FR, ,exact,442,tmcFRm1500a_046a
+Orleans,1.9,47.916668,FR,nkn,exact,446,tmcFRm1500a_001a
+Orthez,-0.766667,43.483334,FR,nkn,exact,1509,tmcFRm1500a_009a
+Pamplona,-1.633333,42.816666,ES,nkn,exact,1510,tmcFRm1500a_012a
+Paris,2.333333,48.866669,FR,nkn,exact,444,tmcFRm1500a_001a
+Perigueux,0.716667,45.183334,FR,nkn,exact,445,tmcFRm1500a_030a
+Poitiers,0.333333,46.583332,FR,nkn,exact,449,tmcFRm1500a_004a
+Pons,-0.55,45.583332,FR,nkn,exact,908,tmcFRm1500a_007a
+Puente la Reina,-1.816667,42.666668,ES,nkn,exact,363,tmcFRm1500a_014a
+Ronceval,-1.316677,43.016666,ES,nkn,exact,278,tmcFRm1500a_011a
+Saint-Gilles,4.433333,43.683334,FR,nkn,exact,463,tmcFRm1500a_043a
+Saintes,-0.633333,45.75,FR,nkn,exact,909,tmcFRm1500a_006a
+Santiago,-8.55,42.883331,ES,nkn,exact,295,tmcFRm1500a_021a
+seafrk01-tmc030511,-8.47802541,43.52327765,ES,nkn,approx,1518,tmcFRm1500a_023a
+seafrk02-tmc030511,-5.52634234,48.31352545,FR,nkn,approx,1519,tmcFRm1500a_025a
+Somport Pass,-0.516667,42.799999,ES/FR, ,exact,365,tmcFRm1500a_046a
+Southampton,-1.4,50.900002,UK,nkn,exact,1513,tmcFRm1500a_027a
+St Jean-d'Angely,-0.516667,45.950001,FR,nkn,exact,1500,tmcFRm1500a_005a
+St Jean-Pied-de-Port,-1.233333,43.166668,FR,nkn,exact,1469,tmcFRm1500a_010a
+St. Leonard,1.483333,45.833332,FR,nkn,exact,1505,tmcFRm1500a_029a
+Talmont,-0.9,45.533333,FR,nkn,exact,472,tmcFRm1500a_026a
+Toul,5.9,48.683334,FR,nkn,exact,1515,tmcFRm1500a_037a
+Toulouse,1.433333,43.599998,FR,nkn,exact,474,tmcFRm1500a_044a
+Tours,0.683333,47.383331,FR,nkn,exact,475,tmcFRm1500a_003a
+Trier,6.633333,49.75,DE,nkn,exact,563,tmcFRm1500a_036a
+Vezelay,3.733333,47.466667,FR,nkn,exact,477,tmcFRm1500a_029a
+Villalcazar de Sirga,-4.533333,42.316666,ES,nkn,exact,1511,tmcFRm1500a_018a

@@ -1,0 +1,77 @@
+NODE1,LONG1,LAT1,COUNTRY1,DETAIL,DATASTATUS,NODEID1,DATAID
+Aksu,80.23333,41.25,CN,nkn,exact,174,tmcZCAm1000_005a
+Aleppo,37.166668,36.200001,SY,nkn,exact,231,tmcZCAm1000_024a
+Baghdad,44.39389,33.338612,IQ,nkn,exact,1635,tmcZCAm1000_023a
+Balasaghun,75.3333,42.7333,KG,nkn,exact,1005,tmcZCAm1000_004a
+Balkh,66.9,36.75,AF,nkn,exact,22,tmcZCAm1000_016a
+Bamiyan,67.816666,34.816666,AF,nkn,exact,227,tmcZCAm1000_017a
+Bedel Pass,78.433334,41.433334,CN/KG,nkn,exact,190,tmcZCAm1000_039a
+Beshbaliq,87.583336,43.799999,CN,nkn,exact,173,tmcZCAm1000_006a
+Bukhara,64.416664,39.799999,UZ,nkn,exact,232,tmcZCAm1000_020a
+Ch'ang-an,108.935547,34.260277,CN,nkn,exact,175,tmcZCAm1000_009a
+Ch'eng-tu,104.066673,30.666668,CN,nkn,exact,267,tmcZCAm1000_038a
+Dahistan,54.666668,38.333332,TM,nkn,exact,988,tmcZCAm1000_041a
+Etil,47.017,47.25,RU,nkn,exact,72,tmcZCAm1000_001a
+Gurgan,54.439167,36.828056,IR,nkn,exact,296,tmcZCAm1000_041a
+Gurganj,59.166668,42.316666,TM,nkn,exact,643,tmcZCAm1000_042a
+Hadda,72.866669,32.016666,AF,nkn,exact,228,tmcZCAm1000_037a
+Hamadan,48.583,34.767,IR,nkn,exact,59,tmcZCAm1000_022a
+K'ai-feng,114.348343,34.791111,CN,nkn,exact,548,tmcZCAm1000_011a
+Kashgar,76.033,39.483,CN,nkn,exact,77,tmcZCAm1000_013a
+Khotan,79.9166,37.1166,CN,nkn,exact,68,tmcZCAm1000_012a
+Kucha,82.900002,41.716667,CN,nkn,exact,89,tmcZCAm1000_005a
+loc01-tmc010206,74.599998,42.900002,KG,mod Bishkek?,exact,530,tmcZCAm1000_003a
+loc01-tmc040121,78.433334,41.433334,KG,Bedel Pass?,exact,190,tmcZCAm1000_043a
+loc02-tmc010206,67.833336,40.099998,UZ,mod Dzhizak?,exact,674,tmcZCAm1000_025a
+loc02-tmc040121,76.199997,42.466667,KG,mod Bishkek?,exact,531,tmcZCAm1000_044a
+loc03-tmc010205,36.707779,45.207779,RU,Tmutorokan,exact,696,tmcZCAm1000_001a
+loc04-tmc010205,72.800003,40.533333,KG,mod Osh?,exact,117,tmcZCAm1000_028a
+loc05-tmc010205,70.949997,40.5,UZ,mod Kokand?,exact,219,tmcZCAm1000_027a
+loc06-tmc010205,67.26667,37.233334,UZ,mod Termez?,exact,532,tmcZCAm1000_014a
+Lou-lan,89.75,40.533333,CN,nkn,exact,92,tmcZCAm1000_033a
+Lo-yang,112.4166,34.6833,CN,nkn,exact,93,tmcZCAm1000_010a
+Marv,62.166668,37.616669,TM,nkn,exact,620,tmcZCAm1000_021a
+Mathura,77.7,27.5,IN,nkn,exact,99,tmcZCAm1000_019a
+Peshawar,71.550003,34.016666,PK,nkn,exact,224,tmcZCAm1000_035a
+Przeval'sk,78.4,42.483,KG,nkn,exact,129,tmcZCAm1000_040a
+Qara Shahr,86.566666,42.066666,CN,nkn,exact,217,tmcZCAm1000_031a
+Qocho,89.1,42.917,CN,nkn,exact,170,tmcZCAm1000_007a
+Samarqand,66.95,39.667,UZ,nkn,exact,141,tmcZCAm1000_015a
+Talas,71.417,42.833,KZ,nkn,exact,515,tmcZCAm1000_002a
+Tashkent,69.3,41.333,UZ,nkn,exact,162,tmcZCAm1000_026a
+Taxila,72.833336,33.75,PK,nkn,exact,163,tmcZCAm1000_018a
+Tun-huang,94.683334,40.166668,CN,nkn,exact,50,tmcZCAm1000_008a
+Alma-Ata,76.949997,43.25,KZ,nkn,exact,976,tmcZCAm1000a_002a
+Baoji,107.158058,34.383057,CN,nkn,exact,977,tmcZCAm1000a_019a
+Dingxi,104.620003,35.583332,CN,nkn,exact,978,tmcZCAm1000a_014a
+Dunhuang,94.683334,40.166668,CN,nkn,exact,50,tmcZCAm1000a_007a
+frk01-tmc010205,88.833336,39.25,CN,N Loulan;NE Dunguang;SW Ruoqiang,exact,103,tmcZCAm1000a_023a
+Hami,93.449997,42.799999,CN,nkn,exact,527,tmcZCAm1000a_006a
+Hetian,79.9166,37.1166,CN,nkn,exact,68,tmcZCAm1000a_027a
+Jiayuguan,98.300003,39.816666,CN,nkn,exact,979,tmcZCAm1000a_008a
+Kashi,76.033,39.483,CN,nkn,exact,77,tmcZCAm1000a_029a
+Kuche,82.900002,41.716667,CN,nkn,exact,89,tmcZCAm1000a_035a
+Kurle,86.150002,41.733334,CN,nkn,exact,88,tmcZCAm1000a_033a
+Lanzhou,103.792221,36.056389,CN,nkn,exact,85,tmcZCAm1000a_013a
+loc01-tmc010507,102.833344,36.333332,CN,nkn,exact,974,tmcZCAm1000a_017a
+loc07-tmc010205,91.599998,43.466667,CN,mod Qijiaojing,exact,613,tmcZCAm1000a_006a
+loc08-tmc010205,73.25,39.733334,KG,mod Sari-tash,exact,615,tmcZCAm1000a_030a
+loc04-tmc010205,72.800003,40.533333,KG,mod Sari-tash,exact,117,tmcZCAm1000a_030a
+loc01-tmc040120,75.449997,36.866669,CN/PK,Kunjerab Pass,exact,82,tmcZCAm1000a_040a
+Aksu,80.23333,41.25,CN,Kunjerab Pass,exact,174,tmcZCAm1000a_005a
+loc01-tmc010206,74.599998,42.900002,CN,mod Bishkek?,exact,530,tmcZCAm1000a_005a
+Loulan,89.75,40.533333,CN,nkn,exact,92,tmcZCAm1000a_022a
+Pingliang,106.686111,35.539165,CN,nkn,exact,980,tmcZCAm1000a_011a
+Qiemo,85.533333,38.133331,CN,nkn,exact,697,tmcZCAm1000a_026a
+Ruoqiang,88,39.033333,CN,nkn,exact,139,tmcZCAm1000a_025a
+Shihezi,86.033333,44.299999,CN,nkn,exact,981,tmcZCAm1000a_003a
+Taxkorgan,75.23333,37.783333,CN,nkn,exact,164,tmcZCAm1000a_032a
+Tianshui,105.717499,34.583611,CN,nkn,exact,982,tmcZCAm1000a_018a
+Turpan,89.1,42.917,CN,nkn,exact,170,tmcZCAm1000a_021a
+Urumqi,87.583336,43.799999,CN,nkn,exact,173,tmcZCAm1000a_004a
+Wuwei,102.800003,37.966667,CN,nkn,exact,91,tmcZCAm1000a_010a
+Xian,108.935547,34.260277,CN,nkn,exact,175,tmcZCAm1000a_012a
+Xining,101.76667,36.616669,CN,nkn,exact,258,tmcZCAm1000a_016a
+Yecheng,77.433334,37.900002,CN,nkn,exact,983,tmcZCAm1000a_028a
+Yining,81.349998,43.900002,CN,nkn,exact,646,tmcZCAm1000a_002a
+Zhangye,100.449997,38.933334,CN,nkn,exact,182,tmcZCAm1000a_009a
