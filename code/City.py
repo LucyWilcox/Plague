@@ -26,6 +26,10 @@ class City(object):
 		self.route_pil = dict()
 		self.route_trade = dict()
 
+	def __str__(self):
+		""" Prints the city name """
+		return self.name + ", " + self.country
+
 	def calc_dist(self, pos):
 		""" Given a different city's position, calculates
 		the distance between them 'as a bird flies'.
