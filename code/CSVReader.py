@@ -29,6 +29,18 @@ def make_cities_reader():
         except:
             print("cannot open", filename)
 
+def make_routes_reader():
+    # yields reader for each route (edge) file
+    for filename in get_node_files():
+        try:
+            file_path = EDGE_PATH + "/" + filename
+            file = open(file_path, 'rb')
+            reader = csv.reader(file)
+            yield reader
+        except:
+            print("cannot open", filename)
+
+
 def make_cities():
     cities = {}
     for reader in make_cities_reader():
@@ -47,7 +59,22 @@ def make_cities():
                 if city_id not in cities:
                     city = City(name, pos, city_id, country)
                     cities[city_id] = city
-    print cities
+    return cities
 
+def add_routes(cities):
+    for reader in make_routes_reader():
+        reader.next() # skip header
+        for row in reader:
+            try:
+                use = str(row[5])
+                city_1_id = int(row[25])
+                city_2_id = int(row[26])
+            except:
+                print("input error, cannot properly cast type for line " + str([i for i in row]))
+            else:
+                city_1 = cities[city_1_id]
+                city_2 = cities[city_2_id]
+                city_1.add_routes(city_2, use)
 
-make_cities()
+cities = make_cities()
+add_routes(cities)
