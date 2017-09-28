@@ -44,7 +44,7 @@ class City(object):
 		city: instance of City class
 		use: string of either pil or trd
 		"""
-		if use is 'pil':
+		if use is 'plg':
 			self.add_to_dict(self.route_pil, city, use)
 		else: self.add_to_dict(self.route_trade, city, use)
 
