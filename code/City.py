@@ -28,7 +28,8 @@ class City(object):
 
 	def __str__(self):
 		""" Prints the city name """
-		return self.name + ", " + self.country
+
+		return self.name + ", " + self.country + "\nPilgrimage Routes:\n" + str(self.route_pil)+"\nTradeRoutes:\n"+str(self.route_trade)
 
 	def calc_dist(self, pos):
 		""" Given a different city's position, calculates
