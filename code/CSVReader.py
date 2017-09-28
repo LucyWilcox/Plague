@@ -3,7 +3,7 @@ CSV reader for the Plague project
 """
 import csv
 import os
-# import City
+from City import City
 
 NODE_PATH = 'OWTRAD/nodes'
 EDGE_PATH = 'OWTRAD/edges'
@@ -47,6 +47,7 @@ def make_cities():
                 if city_id not in cities:
                     city = City(name, pos, city_id, country)
                     cities[city_id] = city
+    print cities
 
 
 make_cities()

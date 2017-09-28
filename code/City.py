@@ -42,7 +42,7 @@ class City(object):
 		"""
 		if use is 'pil':
 			self.add_to_dict(self.route_pil, city, use)
-		else self.add_to_dict(self.route_trade, city, use)
+		else: self.add_to_dict(self.route_trade, city, use)
 
 	def add_to_dict(self, route_dict, city, use):
 		""" Checks to see if city is already in route_dict and adds
