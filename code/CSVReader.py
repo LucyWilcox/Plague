@@ -31,7 +31,7 @@ def make_cities_reader():
 
 def make_routes_reader():
     # yields reader for each route (edge) file
-    for filename in get_node_files():
+    for filename in get_edge_files():
         try:
             file_path = EDGE_PATH + "/" + filename
             file = open(file_path, 'rb')
@@ -42,6 +42,10 @@ def make_routes_reader():
 
 
 def make_cities():
+    """
+    makes dict of all cities where city_id is the key and the city object
+    is the value
+    """
     cities = {}
     for reader in make_cities_reader():
         reader.next() # skip header
@@ -72,9 +76,14 @@ def add_routes(cities):
             except:
                 print("input error, cannot properly cast type for line " + str([i for i in row]))
             else:
-                city_1 = cities[city_1_id]
-                city_2 = cities[city_2_id]
-                city_1.add_routes(city_2, use)
+                if city_1_id in cities and city_2_id in cities:
+                    city_1 = cities[city_1_id]
+                    city_2 = cities[city_2_id]
+                    city_1.add_route(city_2, use)
 
 cities = make_cities()
 add_routes(cities)
+print(cities)
+print(cities[2034])
+print(cities[920])
+print(cities[112])
