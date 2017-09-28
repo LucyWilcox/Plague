@@ -1,0 +1,26 @@
+NODE1,LONG1,LAT1,COUNTRY1,DETAIL,DATASTATUS,NODEID1,DATAID
+Aidhab,36.650002,22.233334,SD,nkn,exact,798,tmcDZm0500_001a
+Aswan,32.883331,24.083332,EG,nkn,exact,741,tmcDZm0500_002a
+Awlil,-15.967,18.15,MR,nkn,exact,875,tmcDZm0500_004a
+Bilma,12.933333,18.683332,NE,nkn,exact,796,tmcDZm0500_005a
+Cairo,31.25,30.05,EG,nkn,exact,871,tmcDZm0500_022a
+Gao,-0.05,16.266666,ML,nkn,exact,795,tmcDZm0500_007a
+Ghadames,9.5,30.133333,LY,nkn,exact,762,tmcDZm0500_008a
+Jiddah,39.200001,21.483334,SA,nkn,exact,743,tmcDZm0500_001a
+Kano,8.167,12,NG,nkn,exact,873,tmcDZm0500_010a
+Mekka,39.816666,21.450001,SA,nkn,exact,742,tmcDZm0500_009a
+Murzuk,13.917,25.917,LY,nkn,exact,872,tmcDZm0500_005a
+Sijilmasa,-4.283333,31.283333,MA,nkn,exact,789,tmcDZm0500_004a
+Taghaza,-5,23.6,ML,nkn,exact,790,tmcDZm0500_012a
+Taodeni,-3.9833,22.6667,ML,nkn,exact,869,tmcDZm0500_013a
+Timbuktu,-3.016667,16.766666,ML,nkn,exact,793,tmcDZm0500_015a
+Tripoli,13.18,32.892502,LY,nkn,exact,774,tmcDZm0500_017a
+Tuat,-0.3039,27.8007,DZ,nkn,exact,870,tmcDZm0500_014a
+Tunis,10.217,36.833,TN,nkn,exact,868,tmcDZm0500_020a
+Wargla,5.333333,31.950001,DZ,nkn,exact,777,tmcDZm0500_011a
+loc01-tmc010322,31.183332,27.183332,EG,?Asyut,exact,876,tmcDZm0500_003a
+loc02-tmc010322,15.9667,13.1833,TD,?Bir Gara,exact,874,tmcDZm0500_006a
+Bamako,-7.983,12.667,ML,nkn,exact,893,tmcDZm0500_027a
+Meroe,31.8167,18.4833,SD,nkn,exact,892,tmcDZm0500_0028a
+Ghat,10.183333,24.950001,LY,nkn,exact,761,tmcDZm0500_0025a
+Augila,21.286943,29.108055,LY,nkn,exact,776,tmcDZm0500_003a

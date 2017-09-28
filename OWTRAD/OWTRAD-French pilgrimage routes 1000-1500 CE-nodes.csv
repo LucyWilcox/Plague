@@ -1,0 +1,40 @@
+NODE1,LONG1,LAT1,COUNTRY1,DETAIL,DATASTATUS,NODEID1,DATAID
+Arles,4.633333,43.666668,FR,nkn,exact,403,tmcFRm1500_033a
+Autun,4.3,46.950001,FR,nkn,exact,1504,tmcFRm1500_019a
+Blaye,-0.666667,45.133331,FR,nkn,exact,1501,tmcFRm1500_007a
+Bordeaux,-0.566667,44.833332,FR,nkn,exact,408,tmcFRm1500_008a
+Bourges,2.4,47.083332,FR,nkn,exact,413,tmcFRm1500_017a
+Burgos,-3.7,42.349998,ES,nkn,exact,387,tmcFRm1500_013a
+Cahors,1.433333,44.433334,FR,nkn,exact,409,tmcFRm1500_028a
+Chartres,1.5,48.450001,FR,nkn,exact,410,tmcFRm1500_006a
+Clermont,3.083333,45.783333,FR,nkn,exact,417,tmcFRm1500_031a
+Conques,2.4,44.599998,FR,nkn,exact,285,tmcFRm1500_025a
+frk03-tmc030511,2.033333,44.599998,FR,Figeac?,exact,422,tmcFRm1500_027a
+Le Puy,3.883333,45.033333,FR,nkn,exact,281,tmcFRm1500_024a
+Leon,-5.566667,42.599998,ES,nkn,exact,377,tmcFRm1500_014a
+Les Saintes Maries,4.433333,43.450001,FR,nkn,exact,1506,tmcFRm1500_032a
+Limoges,1.25,45.849998,FR,nkn,exact,433,tmcFRm1500_021a
+loc01-tmc030511,-0.45,44.966667,FR,Cubzac-les-Ponts?,exact,1534,tmcFRm1500_038a
+loc02-tmc030511,-0.6,43.200001,FR,Oloron-Sainte-Marie?,exact,442,tmcFRm1500_036a
+Lyons,4.85,45.75,FR,nkn,exact,434,tmcFRm1500_024a
+Moissac,1.083333,44.099998,FR,nkn,exact,437,tmcFRm1500_029a
+Neuvy-St-Sepulcre,1.816667,46.599998,FR,nkn,exact,441,tmcFRm1500_018a
+Orleans,1.9,47.916668,FR,nkn,exact,446,tmcFRm1500_001a
+Ostabat,-1.066667,43.25,FR,nkn,exact,362,tmcFRm1500_030a
+Paris,2.333333,48.866669,FR,nkn,exact,444,tmcFRm1500_001a
+Perigueux,0.716667,45.183334,FR,nkn,exact,445,tmcFRm1500_022a
+Poitiers,0.333333,46.583332,FR,nkn,exact,449,tmcFRm1500_003a
+Puente la Reina,-1.816667,42.666668,ES,nkn,exact,363,tmcFRm1500_011a
+Rocamadour,1.633333,44.799999,FR,nkn,exact,459,tmcFRm1500_027a
+Roncevaux,-1.316677,43.016666,ES,nkn,exact,278,tmcFRm1500_010a
+Saintes,-0.633333,45.75,FR,nkn,exact,909,tmcFRm1500_005a
+Santiago de Compostela,-8.55,42.883331,ES,nkn,exact,295,tmcFRm1500_016a
+Somport,-0.516667,42.799999,ES/FR,nkn,exact,365,tmcFRm1500_011a
+St-Gilles,4.433333,43.683334,FR,nkn,exact,463,tmcFRm1500_032a
+St-Guilhem,3.55,43.733334,FR,nkn,exact,1507,tmcFRm1500_034a
+St-Jean d'Angely,-0.516667,45.950001,FR,nkn,exact,1500,tmcFRm1500_004a
+St-Leonard,1.483333,45.833332,FR,nkn,exact,1505,tmcFRm1500_021a
+Toulouse,1.433333,43.599998,FR,nkn,exact,474,tmcFRm1500_035a
+Tours,0.683333,47.383331,FR,nkn,exact,475,tmcFRm1500_002a
+Vezelay,3.733333,47.466667,FR,nkn,exact,477,tmcFRm1500_017a
+Villafranca,-6.8,42.599998,ES,nkn,exact,367,tmcFRm1500_015a

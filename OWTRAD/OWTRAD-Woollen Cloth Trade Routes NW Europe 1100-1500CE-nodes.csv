@@ -1,0 +1,18 @@
+NODE1,COUNTRY1,NODE2,COUNTRY2,DETAIL,USES,TYPE,ROLE,GOODS1,GOODS2,GOODS3,DIR,DIST,TRAVMODE,TRAVTIME,EARLYDATE,LATEDATE,DATAQLTY,SRC,LONG1,LAT1,COORDSRC1,LONG2,LAT2,COORDSRC2,NODEID1,NODEID2,PROBL,DATAID
+Cologne,DE,frk01-tmc051110,DE,?Aachen,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1500,QC3,Spufford 2002:233,6.95,50.933334,ADL2157469,6.1,50.767,TGN7004799,411,932,P000,tmcBEm1100_001a
+frk01-tmc051110,DE,Maastricht,NL,?Aachen,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,6.1,50.767,TGN7004799,5.6833,50.85,www.fallingrain.com,932,2983,P000,tmcBEm1100_002a
+Maastricht ,NL,St Truiden,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,5.6833,50.85,www.fallingrain.com,5.2,50.8,www.fallingrain.com,2983,3024,P000,tmcBEm1100_003a
+St Truiden,BE,Tienen,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,5.2,50.8,www.fallingrain.com,4.95,50.8,www.fallingrain.com,3024,3025,P000,tmcBEm1100_004a
+Tienen,BE,Leuven,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,4.95,50.8,www.fallingrain.com,4.7,50.8833,www.fallingrain.com,3025,2982,P000,tmcBEm1100_005a
+Leuven,BE,Brussels,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,4.7,50.8833,www.fallingrain.com,4.3333,50.8333,www.fallingrain.com,2982,2981,P000,tmcBEm1100_006a
+Brussels,BE,Aalst,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,4.3333,50.8333,www.fallingrain.com,4.0333,50.9333,www.fallingrain.com,2981,3026,P000,tmcBEm1100_007a
+Aalst,BE,Ghent,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,4.0333,50.9333,www.fallingrain.com,3.7167,51.05,www.fallingrain.com,3026,2793,P000,tmcBEm1100_008a
+Ghent,BE,Bruges,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1200,1500,QC3,Spufford 2002:233,3.7167,51.05,www.fallingrain.com,3.2333,51.2167,www.fallingrain.com,2793,2702,P000,tmcBEm1100_009a
+frk01-tmc051110,DE,Liege,BE,?Aachen,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,6.1,50.767,TGN7004799,5.566667,50.633331,ADL1249773,932,432,P000,tmcBEm1100_010a
+Liege,DE,Huy,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,5.566667,50.633331,ADL1249773,5.2333,50.5167,www.fallingrain.com,432,3027,P000,tmcBEm1100_011a
+Huy,DE,Namur,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,5.2333,50.5167,www.fallingrain.com,4.8667,50.4667,www.fallingrain.com,3027,2794,P000,tmcBEm1100_012a
+Namur,DE,Mons,BE,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,4.8667,50.4667,www.fallingrain.com,3.9333,50.45,www.fallingrain.com,2794,3028,P000,tmcBEm1100_013a
+Mons,DE,Valenciennes,FR,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,3.9333,50.45,www.fallingrain.com,3.5333,50.35,www.fallingrain.com,3028,3029,P000,tmcBEm1100_014a
+Valenciennes,FR,Douai,FR,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,3.5333,50.35,www.fallingrain.com,3.0667,50.3667,www.fallingrain.com,3029,3030,P000,tmcBEm1100_015a
+Douai,FR,Arras,FR,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,3.0667,50.3667,www.fallingrain.com,2.7833,50.2833,www.fallingrain.com,3030,3031,P000,tmcBEm1100_016a
+Arras,FR,Montreuil,FR,nkn,trd,cd,maj,ADTE001,B000,C000,nkn,d000dd,nkn,t000t,1100,1200,QC3,Spufford 2002:233,2.7833,50.2833,www.fallingrain.com,1.7667,50.4667,www.fallingrain.com,3031,3032,P000,tmcBEm1100_017a
