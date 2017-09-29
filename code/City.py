@@ -26,7 +26,7 @@ class City(object):
 
 		# Create dictionaries for pilgrimage routes and trade routes
 		#  Dictionaries are of city_id : distance in km
-		self.route_pil = dict()
+		self.route_plg = dict()
 		self.route_trade = dict()
 		self.degree = 0
 		self.clustering_coefficient = 0
@@ -34,7 +34,7 @@ class City(object):
 	def __str__(self):
 		""" Prints the city name """
 
-		return self.name + ", " + self.country + "\nPilgrimage Routes:\n" + str(self.route_pil)+"\nTradeRoutes:\n"+str(self.route_trade)
+		return self.name + ", " + self.country + "\nPilgrimage Routes:\n" + str(self.route_plg)+"\nTradeRoutes:\n"+str(self.route_trade)
 
 	def calc_dist(self, pos):
 		""" Given a different city's position, calculates
@@ -51,7 +51,7 @@ class City(object):
 		use: string of either pil or trd
 		"""
 		if use is 'plg':
-			self.add_to_dict(self.route_pil, city, use)
+			self.add_to_dict(self.route_plg, city, use)
 		else: self.add_to_dict(self.route_trade, city, use)
 
 	def add_to_dict(self, route_dict, city, use):
