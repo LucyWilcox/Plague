@@ -19,12 +19,17 @@ class City(object):
 		self.pos = pos
 		self.city_id = city_id
 		self.country = country
+
 		self.is_infected = False
+		self.infected_timer = 0
+		self.infection_count = 0
 
 		# Create dictionaries for pilgrimage routes and trade routes
 		#  Dictionaries are of city_id : distance in km
 		self.route_pil = dict()
 		self.route_trade = dict()
+		self.degree = 0
+		self.clustering_coefficient = 0
 
 	def __str__(self):
 		""" Prints the city name """
@@ -57,9 +62,12 @@ class City(object):
 			dist = self.calc_dist(city.pos)
 			route_dict[city.city_id] = dist
 			city.add_route(self, use) # Tries to add itself to the other city
+			self.degree += 1
 
-	def step(self):
+	def infect_self(self):
 		""" Takes a single step in time, calculating the chance that it gets
 		infected.
 		"""
-		pass
+		self.is_infected = True
+		self.infected_timer = 10
+		self.infection_count += 1
