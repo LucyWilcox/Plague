@@ -71,3 +71,12 @@ class City(object):
 		self.is_infected = True
 		self.infected_timer = 10
 		self.infection_count += 1
+
+	def heal(self):
+		""" Decreased infected timer and returns true is city is still infected
+		false if not infected
+		"""
+		self.infected_timer -= 1
+		if self.infected_timer is 0:
+			return False
+		return True
