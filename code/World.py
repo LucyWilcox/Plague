@@ -24,6 +24,7 @@ class World(object):
 	def loop(self, n):
 		for _ in range(n):
 			self.step()
+			print(self.infected)
 
 	def step(self):
 		current_infected = self.infected
@@ -48,3 +49,6 @@ class World(object):
 			still_infected = city.heal()
 			if not still_infected:
 				self.infected.remove(city_id)
+
+world = World([2582, 2580, 219, 1630, 855])
+world.loop(20)
