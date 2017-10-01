@@ -2,7 +2,8 @@ from CSVReader import *
 import numpy as np
 import networkx as nx
 
-class World(object):
+
+class World():
 
 	def __init__(self, infected_ids, transmission):
 		""" Builds a world of cities.
@@ -101,15 +102,15 @@ def grapher(cities):
 
 	return closeness, clustering_coefficient, degree, infection_count
 
-# starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
-# starting_city = np.random.choice(starting_cities)
-# world = World([starting_city], 0.15)
-# infected = world.loop(50)
-# print(len(infected))
-# # print(infected)
-# # print(world.closeness(1097))
+starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
+starting_city = np.random.choice(starting_cities)
+world = World([starting_city], 0.15)
+infected = world.loop(50)
+print(len(infected))
+# print(infected)
+# print(world.closeness(1097))
 
-# closeness, clustering_coefficient, degree, infection_count = grapher(world.cities)
+closeness, clustering_coefficient, degree, infection_count = grapher(world.cities)
 
 print(clustering_coefficient)
 print(closeness)
