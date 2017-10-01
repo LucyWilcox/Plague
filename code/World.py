@@ -4,14 +4,16 @@ import networkx as nx
 
 class World(object):
 
-	def __init__(self, infected_ids, transmission):
+	def __init__(self, cities, city_graph, infected_ids, transmission):
 		""" Builds a world of cities.
 		infected_ids: a list of city_ids to be set as infected
 		"""
-		self.cities = make_cities()
-		self.city_graph = nx.Graph()
-		add_routes(self.cities, self.city_graph)
-		self.city_graph.add_nodes_from(self.cities.keys())
+		# self.cities = make_cities()
+		# self.city_graph = nx.Graph()
+		# add_routes(self.cities, self.city_graph)
+		# self.city_graph.add_nodes_from(self.cities.keys())
+		self.cities = cities
+		self.city_graph = city_graph
 		self.assign_values()
 		self.infected = infected_ids
 		self.transmission = transmission
@@ -47,25 +49,30 @@ class World(object):
 
 	def step(self):
 		current_infected = self.infected
+		infected_this_step = []
 		for city_id in current_infected:
 			city = self.cities[city_id]
 			for city2_id in city.route_trade:
-				city2 = self.cities[city2_id]
-				if self.should_infect_trade(city.route_trade[city2_id]):
-					city2.infection_count += 1
-					if not city2.is_infected:
-						city2.is_infected = True
-						self.infected.append(city2_id)
-					self.cities[city2_id] = city2
+				if city2_id not in infected_this_step:
+					city2 = self.cities[city2_id]
+					if self.should_infect_trade(city.route_trade[city2_id]):
+						infected_this_step.append(city2_id)
+						city2.infection_count += 1
+						if not city2.is_infected:
+							city2.is_infected = True
+							self.infected.append(city2_id)
+						self.cities[city2_id] = city2
 
 			for city2_id in city.route_plg:
-				city2 = self.cities[city2_id]
-				if self.should_infect_trade(city.route_plg[city2_id]):
-					city2.infection_count += 1
-					if not city2.is_infected:
-						city2.is_infected = True
-						self.infected.append(city2_id)
-					self.cities[city2_id] = city2
+				if city2_id not in infected_this_step:
+					city2 = self.cities[city2_id]
+					if self.should_infect_trade(city.route_plg[city2_id]):
+						infected_this_step.append(city2_id)
+						city2.infection_count += 1
+						if not city2.is_infected:
+							city2.is_infected = True
+							self.infected.append(city2_id)
+						self.cities[city2_id] = city2
 
 	def closeness(self, city_id):
 		city = self.cities[city_id]

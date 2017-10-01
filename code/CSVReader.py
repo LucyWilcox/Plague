@@ -83,11 +83,18 @@ def add_routes(cities, G):
                     city_1.add_route(city_2, use)
                     G.add_edge(city_1_id, city_2_id)
 
+def form_world():
+    cities = make_cities()
+    city_graph = nx.Graph()
+    add_routes(cities, city_graph)
+    city_graph.add_nodes_from(cities.keys())
+    return cities, city_graph
 
-G = nx.Graph()
-cities = make_cities()
-add_routes(cities, G)
-print(G.node)
+
+# G = nx.Graph()
+# cities = make_cities()
+# add_routes(cities, G)
+# print(G.node)
 # print(cities)
 # print(cities[2034])
 # print(cities[920])
