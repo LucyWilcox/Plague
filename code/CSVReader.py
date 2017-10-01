@@ -83,8 +83,8 @@ def add_routes(cities):
 
 cities = make_cities()
 add_routes(cities)
-print(cities)
-print(cities[2034])
-print(cities[920])
-print(cities[112])
-print(cities[639])
+# print(cities)
+# print(cities[2034])
+# print(cities[920])
+# print(cities[112])
+# print(cities[639])
