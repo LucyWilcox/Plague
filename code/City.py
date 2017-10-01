@@ -30,6 +30,7 @@ class City(object):
 		self.route_trade = dict()
 		self.degree = 0
 		self.clustering_coefficient = 0
+		self.closeness = 0
 
 	def __str__(self):
 		""" Prints the city name """
