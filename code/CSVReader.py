@@ -3,6 +3,7 @@ CSV reader for the Plague project
 """
 import csv
 import os
+import networkx as nx
 from City import City
 
 NODE_PATH = 'OWTRAD/nodes'
@@ -65,7 +66,7 @@ def make_cities():
                     cities[city_id] = city
     return cities
 
-def add_routes(cities):
+def add_routes(cities, G):
     for reader in make_routes_reader():
         next(reader) # skip header
         for row in reader:
@@ -80,9 +81,13 @@ def add_routes(cities):
                     city_1 = cities[city_1_id]
                     city_2 = cities[city_2_id]
                     city_1.add_route(city_2, use)
+                    G.add_edge(city_1_id, city_2_id)
 
+
+G = nx.Graph()
 cities = make_cities()
-add_routes(cities)
+add_routes(cities, G)
+print(G.node)
 # print(cities)
 # print(cities[2034])
 # print(cities[920])
