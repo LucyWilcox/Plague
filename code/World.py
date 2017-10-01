@@ -18,6 +18,7 @@ class World():
 		self.assign_values()
 		self.infected = infected_ids
 		self.transmission = transmission
+		self.total_infections = 1
 		for city_id in self.infected:
 			city = self.cities[city_id]
 			city.is_infected = True
@@ -41,9 +42,9 @@ class World():
 		# chance_to_infect = 1 - dist/1000
 		# return (np.random.random() < chance_to_infect)
 
-	def loop(self, n):
-		for _ in range(n):
-			self.step()
+	def loop(self):
+		# for _ in range(n):
+		self.step()
 			# print([cities[i].name for i in self.infected])
 
 		return self.infected
@@ -59,6 +60,7 @@ class World():
 					if self.should_infect_trade(city.route_trade[city2_id]):
 						infected_this_step.append(city2_id)
 						city2.infection_count += 1
+						self.total_infections += 1
 						if not city2.is_infected:
 							city2.is_infected = True
 							self.infected.append(city2_id)
@@ -70,6 +72,7 @@ class World():
 					if self.should_infect_trade(city.route_plg[city2_id]):
 						infected_this_step.append(city2_id)
 						city2.infection_count += 1
+						self.total_infections += 1
 						if not city2.is_infected:
 							city2.is_infected = True
 							self.infected.append(city2_id)
@@ -111,15 +114,19 @@ def grapher(cities):
 
 starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 starting_city = np.random.choice(starting_cities)
-world = World([starting_city], 0.15)
-infected = world.loop(50)
+cities, city_graph = form_world()
+world = World(cities, city_graph, [starting_city], 0.15)
+while world.total_infections < 7800:
+	infected = world.loop()
+# infected = world.loop(50)
 print(len(infected))
 # print(infected)
 # print(world.closeness(1097))
 
 closeness, clustering_coefficient, degree, infection_count = grapher(world.cities)
 
-print(clustering_coefficient)
-print(closeness)
-print(degree)
-print(infection_count)
+# print(clustering_coefficient)
+# print(closeness)
+# print(degree)
+# print(infection_count)
+print(sum(infection_count)/float(sum(degree)))
