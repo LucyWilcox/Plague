@@ -43,10 +43,9 @@ class World():
 		# return (np.random.random() < chance_to_infect)
 
 	def loop(self):
-		# for _ in range(n):
-		self.step()
-			# print([cities[i].name for i in self.infected])
-
+		while self.total_infections < len(self.cities) *6:
+			self.step()
+			
 		return self.infected
 
 	def step(self):
@@ -116,8 +115,8 @@ starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,109
 starting_city = np.random.choice(starting_cities)
 cities, city_graph = form_world()
 world = World(cities, city_graph, [starting_city], 0.15)
-while world.total_infections < 7800:
-	infected = world.loop()
+
+infected = world.loop()
 # infected = world.loop(50)
 print(len(infected))
 # print(infected)
