@@ -56,7 +56,7 @@ class World(object):
 					if not city2.is_infected:
 						city2.is_infected = True
 						self.infected.append(city2_id)
-					cities[city2_id] = city2
+					self.cities[city2_id] = city2
 
 			for city2_id in city.route_plg:
 				city2 = cities[city2_id]
@@ -65,7 +65,7 @@ class World(object):
 					if not city2.is_infected:
 						city2.is_infected = True
 						self.infected.append(city2_id)
-					cities[city2_id] = city2
+					self.cities[city2_id] = city2
 
 	def closeness(self, city_id):
 		city = self.cities[city_id]
@@ -112,3 +112,6 @@ print(len(infected))
 closeness, clustering_coefficient, degree, infection_count = grapher(world.cities)
 
 print(clustering_coefficient)
+print(closeness)
+print(degree)
+print(infection_count)
