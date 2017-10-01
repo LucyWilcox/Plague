@@ -1,6 +1,6 @@
 from CSVReader import *
 import numpy as np
-import pandas
+
 
 class World(object):
 
@@ -84,4 +84,3 @@ infected = world.loop(50)
 print(len(infected))
 # print(infected)
 print(world.closeness(1097))
-print(len(world.cities))

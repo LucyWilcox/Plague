@@ -23,7 +23,7 @@ def make_cities_reader():
     for filename in get_node_files():
         try:
             file_path = NODE_PATH + "/" + filename
-            file = open(file_path, 'rb')
+            file = open(file_path, 'r')
             reader = csv.reader(file)
             yield reader
         except:
@@ -34,7 +34,7 @@ def make_routes_reader():
     for filename in get_edge_files():
         try:
             file_path = EDGE_PATH + "/" + filename
-            file = open(file_path, 'rb')
+            file = open(file_path, 'r')
             reader = csv.reader(file)
             yield reader
         except:
@@ -48,7 +48,7 @@ def make_cities():
     """
     cities = {}
     for reader in make_cities_reader():
-        reader.next() # skip header
+        next(reader) # skip header
         for row in reader:
             try:  # check types of input and cast to types
                 name = str(row[0]).strip()
@@ -67,7 +67,7 @@ def make_cities():
 
 def add_routes(cities):
     for reader in make_routes_reader():
-        reader.next() # skip header
+        next(reader) # skip header
         for row in reader:
             try:
                 use = str(row[5])
