@@ -20,14 +20,17 @@ class City(object):
 		self.city_id = city_id
 		self.country = country
 
+		# Set up attributes for infection and healing
 		self.is_infected = False
 		self.infected_timer = 0
 		self.infection_count = 0
+		self.susceptibility = 1
 
 		# Create dictionaries for pilgrimage routes and trade routes
 		#  Dictionaries are of city_id : distance in km
 		self.route_plg = dict()
 		self.route_trade = dict()
+
 		self.degree = 0
 		self.clustering_coefficient = 0
 		self.closeness = 0
@@ -64,3 +67,10 @@ class City(object):
 			route_dict[city.city_id] = dist
 			city.add_route(self, use) # Tries to add itself to the other city
 			self.degree += 1
+
+	def heal(self):
+		""" Heals the city if infected """
+		self.infected_timer -= 1
+		if self.infected_timer <= 0:
+			return True
+		return False
