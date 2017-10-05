@@ -1,11 +1,12 @@
 from CSVReader import *
 import numpy as np
 import networkx as nx
+import random
 
 
 class World():
 
-	def __init__(self, cities, city_graph, infected_ids, transmission):
+	def __init__(self, cities, city_graph, infected_ids, transmission, percent_quarantine=0):
 		""" Builds a world of cities.
 		infected_ids: a list of city_ids to be set as infected
 		"""
@@ -19,7 +20,11 @@ class World():
 		self.infected = infected_ids
 		self.transmission = transmission
 		self.total_infections = 1
-		self.step_count = 0
+		self.percent_quarantine = percent_quarantine
+		self.cant_infect = []
+		# self.step_count = 0
+
+		self.quarantine_cities()
 
 		for city_id in self.infected:
 			city = self.cities[city_id]
@@ -28,17 +33,25 @@ class World():
 			city.infection_count += 1
 			self.cities[city_id] = city
 
-	def should_infect_trade(self, dist, susceptibility):
+	def quarantine_cities(self):
+		num_remove = self.percent_quarantine * len(self.cities)
+		for key in random.sample(self.cities.keys(), int(num_remove)):
+			self.cant_infect.append(key)
+			self.city_graph.remove_node(key)
+			del self.cities[key]
+
+	def should_infect_trade(self, dist):
 		""" Calculates the likelihood something should be infected based on transmission,
 		distance, and susceptibility. """
-		chance_infect = np.min([250/(dist+1), 1]) * self.transmission * susceptibility
+		chance_infect = np.min([250/(dist+1), 1]) * self.transmission
 		tossing = np.random.choice([1, 0], p=[chance_infect, 1 - chance_infect])
 		if tossing == 1:
 			return True
 		return False
 
-	def should_infect_plg(self, dist, susceptibility):
-		chance_infect = np.min([250/(dist+1), 1]) * self.transmission * susceptibility
+	def should_infect_plg(self, dist):
+		# chance_infect = np.min([250/(dist+1), 1]) * self.transmission
+		chance_infect = self.transmission
 		tossing = np.random.choice([1, 0], p=[chance_infect, 1 - chance_infect])
 		if tossing == 1:
 			return True
@@ -47,10 +60,7 @@ class World():
 	def loop(self, max_steps):
 		""" Runs until either the total infections have exceeded 6 times the number
 		of cities OR the maximum number of steps has been reached. """
-		while self.total_infections < len(self.cities) *6:
-			if self.step_count > max_steps:
-				print("Max Steps Reached")
-				break
+		for _ in range(max_steps):
 			self.step()
 			
 		return self.infected
@@ -63,16 +73,16 @@ class World():
 		for city_id in current_infected:
 			city = self.cities[city_id]
 			for city2_id in city.route_trade:
-				if city2_id not in infected_this_step:
+				if city2_id not in infected_this_step and city2_id not in self.cant_infect:
 					city2 = self.cities[city2_id]
-					if self.should_infect_trade(city.route_trade[city2_id], city2.susceptibility):
+					if self.should_infect_trade(city.route_trade[city2_id]):
 						infected_this_step.append(city2_id)
 						self.cities[city2_id] = self.infect_city(city2)
 
 			for city2_id in city.route_plg:
-				if city2_id not in infected_this_step:
+				if city2_id not in infected_this_step and city2_id not in self.cant_infect:
 					city2 = self.cities[city2_id]
-					if self.should_infect_trade(city.route_plg[city2_id], city2.susceptibility):
+					if self.should_infect_trade(city.route_plg[city2_id]):
 						infected_this_step.append(city2_id)
 						self.cities[city2_id] = self.infect_city(city2)
 
@@ -84,7 +94,7 @@ class World():
 		# 		print(city.name + " has healed.")
 		# 	self.cities[city_id] = city
 
-		self.step_count+=1
+		# self.step_count+=1
 
 	def infect_city(self, city_to_infect):
 		""" Updates all the pieces of infecting a city """
@@ -127,8 +137,9 @@ def grapher(cities):
 starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 starting_city = np.random.choice(starting_cities)
 cities, city_graph = form_world()
-world = World(cities, city_graph, [starting_city], 0.05)
-
+percent_quarantine = .15
+world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
+print(world.cant_infect)
 infected = world.loop(100)
 print(len(infected))
 # # infected = world.loop(50)
