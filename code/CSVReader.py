@@ -58,7 +58,8 @@ def make_cities():
                 country = str(row[3])
                 city_id = int(row[6])
             except:
-                print("input error, cannot properly cast type for line " + str([i for i in row]))
+                pass #printing got annoying
+                # print("input error, cannot properly cast type for line " + str([i for i in row]))
             else:
                 pos = (lat, lon)
                 if city_id not in cities:

@@ -14,24 +14,26 @@ class World():
 		# self.city_graph = nx.Graph()
 		# add_routes(self.cities, self.city_graph)
 		# self.city_graph.add_nodes_from(self.cities.keys())
-		self.cities = cities
-		self.city_graph = city_graph
+		self.cities = cities.copy()
+		self.city_graph = city_graph.copy()
+		self.cant_infect = []
 		self.assign_values()
 		self.infected = infected_ids
 		self.transmission = transmission
 		self.total_infections = 1
+		self.num_cities_infected = 1
 		self.percent_quarantine = percent_quarantine
-		self.cant_infect = []
 		# self.step_count = 0
 
-		self.quarantine_hub_cities()
+		self.quarantine_cities()
 
 		for city_id in self.infected:
-			city = self.cities[city_id]
-			city.is_infected = True
-			# city.infected_timer = 5
-			city.infection_count += 1
-			self.cities[city_id] = city
+			if city_id not in self.cant_infect:
+				city = self.cities[city_id]
+				city.is_infected = True
+				# city.infected_timer = 5
+				city.infection_count += 1
+				self.cities[city_id] = city
 
 	def quarantine_cities(self):
 		num_remove = self.percent_quarantine * len(self.cities)
@@ -79,20 +81,21 @@ class World():
 		infected_this_step = []
 
 		for city_id in current_infected:
-			city = self.cities[city_id]
-			for city2_id in city.route_trade:
-				if city2_id not in infected_this_step and city2_id not in self.cant_infect:
-					city2 = self.cities[city2_id]
-					if self.should_infect_trade(city.route_trade[city2_id]):
-						infected_this_step.append(city2_id)
-						self.cities[city2_id] = self.infect_city(city2)
+			if city_id not in self.cant_infect:
+				city = self.cities[city_id]
+				for city2_id in city.route_trade:
+					if city2_id not in infected_this_step and city2_id not in self.cant_infect:
+						city2 = self.cities[city2_id]
+						if self.should_infect_trade(city.route_trade[city2_id]):
+							infected_this_step.append(city2_id)
+							self.cities[city2_id] = self.infect_city(city2)
 
-			for city2_id in city.route_plg:
-				if city2_id not in infected_this_step and city2_id not in self.cant_infect:
-					city2 = self.cities[city2_id]
-					if self.should_infect_trade(city.route_plg[city2_id]):
-						infected_this_step.append(city2_id)
-						self.cities[city2_id] = self.infect_city(city2)
+				for city2_id in city.route_plg:
+					if city2_id not in infected_this_step and city2_id not in self.cant_infect:
+						city2 = self.cities[city2_id]
+						if self.should_infect_trade(city.route_plg[city2_id]):
+							infected_this_step.append(city2_id)
+							self.cities[city2_id] = self.infect_city(city2)
 
 		# for city_id in self.infected:
 		# 	city = self.cities[city_id]
@@ -112,6 +115,7 @@ class World():
 		if not city_to_infect.is_infected:
 			city_to_infect.is_infected = True
 			self.infected.append(city_to_infect.city_id)
+			self.num_cities_infected += 1
 		return city_to_infect
 
 	def closeness(self, city_id):
@@ -126,8 +130,9 @@ class World():
 
 	def assign_values(self):
 		for city_id in self.cities:
-			self.closeness(city_id)
-			self.clustering_coefficient(city_id)
+			if city_id not in self.cant_infect:
+				self.closeness(city_id)
+				self.clustering_coefficient(city_id)
 
 def grapher(cities):
 	closeness = []
@@ -142,14 +147,26 @@ def grapher(cities):
 
 	return closeness, clustering_coefficient, degree, infection_count
 
-starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
-starting_city = np.random.choice(starting_cities)
-cities, city_graph = form_world()
-percent_quarantine = .30
-world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
-print(world.cant_infect)
-infected = world.loop(100)
-print(len(infected))
+# starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
+# cities, city_graph = form_world()
+
+# for _ in range(10):
+# 	starting_city = np.random.choice(starting_cities)
+# 	percent_quarantine = .30
+# 	world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
+# 	print(world.cant_infect)
+# 	infected = world.loop(100)
+# 	print(len(infected))
+
+#starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
+#starting_city = np.random.choice(starting_cities)
+#cities, city_graph = form_world()
+#percent_quarantine = .15
+#world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
+#print(world.cant_infect)
+#infected = world.loop(100)
+#print(len(infected))
+
 # # infected = world.loop(50)
 # print(len(infected))
 # # print(infected)
