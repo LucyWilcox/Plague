@@ -114,7 +114,7 @@ def grapher(cities):
 starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 starting_city = np.random.choice(starting_cities)
 cities, city_graph = form_world()
-world = World(cities, city_graph, [starting_city], 0.15)
+world = World(cities, city_graph, [starting_city], 0.05)
 
 infected = world.loop()
 # infected = world.loop(50)

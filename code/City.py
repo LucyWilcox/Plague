@@ -24,6 +24,8 @@ class City(object):
 		self.infected_timer = 0
 		self.infection_count = 0
 
+		self.historical_mortality = None
+
 		# Create dictionaries for pilgrimage routes and trade routes
 		#  Dictionaries are of city_id : distance in km
 		self.route_plg = dict()
@@ -64,3 +66,6 @@ class City(object):
 			route_dict[city.city_id] = dist
 			city.add_route(self, use) # Tries to add itself to the other city
 			self.degree += 1
+
+	def historical_mortality(self, historical_mortality):
+		self.historical_mortality = mortality
