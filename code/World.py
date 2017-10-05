@@ -40,7 +40,7 @@ class World():
 		for key in random.sample(self.cities.keys(), int(num_remove)):
 			self.cant_infect.append(key)
 			self.city_graph.remove_node(key)
-			del self.cities[key]
+			self.cities.pop(key)
 
 	def should_infect_trade(self, dist):
 		""" Calculates the likelihood something should be infected based on transmission,
@@ -107,7 +107,7 @@ class World():
 		if not city_to_infect.is_infected:
 			city_to_infect.is_infected = True
 			self.infected.append(city_to_infect.city_id)
-			print(self.infected)
+			#print(self.infected)
 			self.num_cities_infected += 1
 		return city_to_infect
 
