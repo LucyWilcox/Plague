@@ -24,7 +24,7 @@ class World():
 		self.cant_infect = []
 		# self.step_count = 0
 
-		self.quarantine_cities()
+		self.quarantine_hub_cities()
 
 		for city_id in self.infected:
 			city = self.cities[city_id]
@@ -39,6 +39,14 @@ class World():
 			self.cant_infect.append(key)
 			self.city_graph.remove_node(key)
 			del self.cities[key]
+
+	def quarantine_hub_cities(self):
+		hub_cities = [city_id for city_id in self.cities if self.cities[city_id].degree > 6]
+		num_remove = self.percent_quarantine * len(hub_cities)
+		for city_id in random.sample(hub_cities, int(num_remove)):
+			self.cant_infect.append(city_id)
+			self.city_graph.remove_node(city_id)
+			del self.cities[city_id]
 
 	def should_infect_trade(self, dist):
 		""" Calculates the likelihood something should be infected based on transmission,
@@ -137,7 +145,7 @@ def grapher(cities):
 starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 starting_city = np.random.choice(starting_cities)
 cities, city_graph = form_world()
-percent_quarantine = .15
+percent_quarantine = .30
 world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
 print(world.cant_infect)
 infected = world.loop(100)
