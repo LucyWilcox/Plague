@@ -42,6 +42,14 @@ class World():
 			self.city_graph.remove_node(key)
 			self.cities.pop(key)
 
+	def quarantine_hub_cities(self):
+		hub_cities = [city_id for city_id in self.cities if self.cities[city_id].degree > 6]
+		num_remove = self.percent_quarantine * len(hub_cities)
+		for city_id in random.sample(hub_cities, int(num_remove)):
+			self.cant_infect.append(city_id)
+			self.city_graph.remove_node(city_id)
+			del self.cities[city_id]
+
 	def should_infect_trade(self, dist):
 		""" Calculates the likelihood something should be infected based on transmission,
 		distance, and susceptibility. """
@@ -107,7 +115,6 @@ class World():
 		if not city_to_infect.is_infected:
 			city_to_infect.is_infected = True
 			self.infected.append(city_to_infect.city_id)
-			#print(self.infected)
 			self.num_cities_infected += 1
 		return city_to_infect
 
@@ -140,6 +147,17 @@ def grapher(cities):
 
 	return closeness, clustering_coefficient, degree, infection_count
 
+# starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
+# cities, city_graph = form_world()
+
+# for _ in range(10):
+# 	starting_city = np.random.choice(starting_cities)
+# 	percent_quarantine = .30
+# 	world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
+# 	print(world.cant_infect)
+# 	infected = world.loop(100)
+# 	print(len(infected))
+
 #starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 #starting_city = np.random.choice(starting_cities)
 #cities, city_graph = form_world()
@@ -148,6 +166,7 @@ def grapher(cities):
 #print(world.cant_infect)
 #infected = world.loop(100)
 #print(len(infected))
+
 # # infected = world.loop(50)
 # print(len(infected))
 # # print(infected)
