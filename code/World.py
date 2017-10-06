@@ -2,7 +2,7 @@ from CSVReader import *
 import numpy as np
 import networkx as nx
 import random
-
+import csv
 
 class World():
 
@@ -25,7 +25,7 @@ class World():
 		self.percent_quarantine = percent_quarantine
 		# self.step_count = 0
 
-		self.quarantine_cities()
+		self.quarantine_hub_cities()
 
 		for city_id in self.infected:
 			if city_id not in self.cant_infect:
@@ -147,16 +147,26 @@ def grapher(cities):
 
 	return closeness, clustering_coefficient, degree, infection_count
 
-# starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
-# cities, city_graph = form_world()
+starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 
-# for _ in range(10):
-# 	starting_city = np.random.choice(starting_cities)
-# 	percent_quarantine = .30
-# 	world = World(cities, city_graph, [starting_city], 0.15, percent_quarantine)
-# 	print(world.cant_infect)
-# 	infected = world.loop(100)
-# 	print(len(infected))
+response_percentages = [0, 0.05, 0.10, 0.25, 0.5]
+transmitabilities = [0.15, 0.25, 0.5]
+
+hub_cities_file = open('hub_out.csv', 'wb')
+writer = csv.writer(hub_cities_file)
+writer.writerow(['transmition_rate', 'percent_quarantine', 'total_infections', 'num_cities_infected'])
+
+for transmition_rate in transmitabilities:
+	for percent_quarantine in response_percentages:
+		for _ in range(100):
+			cities, city_graph = form_world()
+			starting_city = np.random.choice(starting_cities)
+			world = World(cities, city_graph, [starting_city], transmition_rate, percent_quarantine)
+			infected = world.loop(100)
+			print(transmition_rate, percent_quarantine, world.total_infections, world.num_cities_infected)
+			writer.writerow([transmition_rate, percent_quarantine, world.total_infections, world.num_cities_infected])
+
+hub_cities_file.close()
 
 #starting_cities = [477, 689,742,767,769,770, 814,909,988,1009,1028,1029,1034,1093,1105,1161,1167,1206,120, 7]
 #starting_city = np.random.choice(starting_cities)
