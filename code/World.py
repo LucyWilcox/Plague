@@ -40,7 +40,7 @@ class World():
 		for key in random.sample(self.cities.keys(), int(num_remove)):
 			self.cant_infect.append(key)
 			self.city_graph.remove_node(key)
-			del self.cities[key]
+			self.cities.pop(key)
 
 	def quarantine_hub_cities(self):
 		hub_cities = [city_id for city_id in self.cities if self.cities[city_id].degree > 6]
