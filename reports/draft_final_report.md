@@ -22,24 +22,23 @@ From these results, we can see that if 50% of the cities are under quarantine, l
 
 A more refined model might remove cities as the simulation progresses, depending on the number of infected neighboring cities as well as the quarantine rate. The model also could include an inverse relationship between transitivity and distance, as disease is less likely to pass from distant cities.
 
-##Appendix
+## Appendix
 
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_city_quarantined_plots.png" width="500">
 
-<img src="any_city_quarantined_plots.png" width="500" id="Figure 1">
+Figure 1: Graphs show the total number of infections and total cities infected for different transmission rates and quarantine response rates. In this set of graphs all cities may be quarantined.
 
-Figure 1: TODO
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/quarantined_hubs_plots.png" width="500">
 
-<img src="quarantined_hubs_plots.png" width="500" id="Figure 2">
+Figure 2: Graphs show the total number of infections and total cities infected for different transmission rates and quarantine response rates. In this set of graphs only hub cities may be quarantined.
 
-Figure 2: TODO
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_heatmap.png" width="500">
 
-<img src="any_heatmap.png" width="500" id="Figure 3">
+Figure 3: A heatmap of the total number of cities infected with different transmission and quarantine rates where all cities can be quarantined.
 
-Figure 3: TODO
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/hub_heatmap.png" width="500">
 
-<img src="hub_heatmap.png" width="400" id="Figure 4">
-
-Figure 4: TODO
+Figure 4: A heatmap of the total number of cities infected with different transmission and quarantine rates where only hub cities can be quarantined.
 
 | Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
 |--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
@@ -59,7 +58,7 @@ Figure 4: TODO
 | 0.5                | 0.25                      | 325                 | 480             | 2.52                                     | 1.52                                               |
 | 0.5                | 0.5                       | 650                 | 31              | 1.95                                     | 0.95                                               |
 
-Table 1: TODO
+Table 1: This table shows the number of cities quarantined, cities infected, and the number of cities not infected per city quarantine where any city can be quarantined. We show the number of cities not infected per city quarantined both including and excluding the number of quarantined cities in the total cities not infected.
 
 
 | Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
@@ -80,7 +79,7 @@ Table 1: TODO
 | 0.5                | 0.25                      | 20                  | 1200            | 5                                        | 4                                                  |
 | 0.5                | 0.5                       | 40                  | 1100            | 5                                        | 4                                                  |
 
-Table 2: TODO
+Table 2: This table shows the number of cities quarantined, cities infected, and the number of cities not infected per city quarantine where only hub cities can be quarantined. We show the number of cities not infected per city quarantined both including and excluding the number of quarantined cities in the total cities not infected.
 
 ## Bibliography 
 [Gómez, J. M. and Verdú, M. Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic.](https://www.nature.com/articles/srep43467) Sci. Rep. 7, 43467; doi: 10.1038/srep43467 (2017).
