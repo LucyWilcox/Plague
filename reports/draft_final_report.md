@@ -2,16 +2,18 @@
 
 ## Lucy Wilcox and Kaitlyn Keil
 
-**Abstract** In Gomez and Verdu’s paper *Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic*. They model infection patterns in Europe and Asia due to the plague and find that hub cities are reinfected more frequently. We extended this work by adding a quarantine response to examine how the spread of the diseases is impacted by varying responses. We also examine the result of quarantining only hub cities. To do this we removed nodes from our network according to a certain rate. We find that quarantining hub cities prevents a larger number of cities from being infected on a per city quarantined basis, but has less of an overall impact due to the small number of hubs.
+**Abstract** 
+In Gomez and Verdu’s paper *Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic*. They model infection patterns in Europe and Asia due to the plague and find that hub cities are reinfected more frequently. We extended this work by adding a quarantine response to examine how the spread of the diseases is impacted by varying responses. We also examine the result of quarantining only hub cities. To do this we removed nodes from our network according to a certain rate. We find that quarantining hub cities prevents a larger number of cities from being infected on a per city quarantined basis, but has less of an overall impact due to the small number of hubs.
 
 Gomez and Verdu use historical trade and pilgrimage route data to create a network between cities in Europe and Asia during the plague. They start the plague and different Asian cities and let it run through their network with varying transmission rates. Our model uses these same data to create a network, and we simulate their reinfection pattern. We look into what might have happened if cities had been able to immediately and completely quarantine themselves when the plague began to spread. From this, we can guess at the minimum percent response to contain the plague for different transmission rates; first if any city could potentially quarantine itself, and then if only hub cities (cities with higher degree - which we defined as being a degree of 7 or above) respond. This type of modeling can be extrapolated to the spread of disease in a smaller field, or suggest ways to react to sickness in a community.
 
 To do this, we iterate through a set quarantine rates which determine what percentage of cities are quarantined and are removed from the graph. For each transmission and quarantine rate, we removed a percentage of the cities (nodes) before the simulation ran, as per the quarantine rate. Once these cities are removed, we begin the infection in a single city in central Asia, as listed by the original supplementary material. For every edge connecting this city to another, there is a percent chance of infection spread equal to the transmission rate. Every time step allows each city to attempt to infect each of its neighbors once. Cities are allowed to be reinfected, which increases the overall infection count of the simulation. We also keep track of the number of cities infected, regardless of the number of times they have been re-infected. We run this simulation for 100 time steps. For each quarantine and transmission rate, we run the simulation 100 times before taking the average number of total infections and number of infected cities for each set of rates. For removing hubs, we repeat this process, but only cities with more than 6 edges are considered for removal.
 
-We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate as seen in Figure ![alt text][Figure1]. If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases at an almost linear rate as seen in Figure (quarantined_hubs_plots.png). 
+We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate as seen in Figure 1. If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases at an almost linear rate as seen in Figure 2. 
 
-When we compare the number of cities infected for any city removed to the number of cities infected when only hubs are removed, we find that while the number for low quarantine rates are very similar, as the quarantine rate increases, the number of cities infected with only hubs being quarantined is much larger. We believe that this is due to the fact that there are only 80 cities which meet our criteria of hub cities compared to the total 1300 cities, this means that when the quarantine rate is 0.25% there are 325 cities being quarantined in the non-hub only model compared to 20 cities in the hub only model. 
-Though both of these relationships are linear, we find that they have different slopes, this can help us determine the effectiveness of quarantining hubs. The number of cities not infected with per city quarantined is 7.6 on average when only hub cities are quarantined and 2.3 when any city can be quarantined. When the number of cities not infected excludes the quarantined cities the average cities not infected drops to 6.9 when only hub cities are quarantined  and 1.5 when any city can be quarantined. Full data can be found in table (ADD). This shows us that if a limited number of cities can be quarantined it is more effective to quarantine hub cities.
+When we compare the number of cities infected for any city removed to the number of cities infected when only hubs are removed, we find that while the number for low quarantine rates are very similar, as the quarantine rate increases, the number of cities infected with only hubs being quarantined is much larger. This is shown in Figure 3 and Figure 4. We believe that this is due to the fact that there are only 80 cities which meet our criteria of hub cities compared to the total 1300 cities, this means that when the quarantine rate is 0.25% there are 325 cities being quarantined in the non-hub only model compared to 20 cities in the hub only model. 
+
+Though both of these relationships are linear, we find that they have different slopes, this can help us determine the effectiveness of quarantining hubs. The number of cities not infected with per city quarantined is 7.6 on average when only hub cities are quarantined and 2.3 when any city can be quarantined. When the number of cities not infected excludes the quarantined cities the average cities not infected drops to 6.9 when only hub cities are quarantined  and 1.5 when any city can be quarantined. Full data can be found in Table 1 and Table 2. This shows us that if a limited number of cities can be quarantined it is more effective to quarantine hub cities.
 
 Another method we used to more accurately determine the spread of the disease is to compare the number of infected cities to the number of cities in the graph. TODO: INSERT THESE RESULTS.
 
@@ -22,8 +24,63 @@ A more refined model might remove cities as the simulation progresses, depending
 
 ##Appendix
 
-[Figure1]: any_city_quarantined_plots.png "Any City Quarantined"
-Figure 1: bla
+
+<img src="any_city_quarantined_plots.png" width="500" id="Figure 1">
+
+Figure 1: TODO
+
+<img src="quarantined_hubs_plots.png" width="500" id="Figure 2">
+
+Figure 2: TODO
+
+<img src="any_heatmap.png" width="500" id="Figure 3">
+
+Figure 3: TODO
+
+<img src="hub_heatmap.png" width="400" id="Figure 4">
+
+Figure 4: TODO
+
+| Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
+|--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
+| 0.15               | 0                         | 0                   | 1200            |                                          |                                                    |
+| 0.15               | 0.05                      | 65                  | 1100            | 3.08                                     | 2.08                                               |
+| 0.15               | 0.1                       | 130                 | 890             | 3.15                                     | 2.15                                               |
+| 0.15               | 0.25                      | 325                 | 360             | 2.89                                     | 1.89                                               |
+| 0.15               | 0.5                       | 650                 | 21              | 1.97                                     | 0.97                                               |
+| 0.25               | 0                         | 0                   | 1300            |                                          |                                                    |
+| 0.25               | 0.05                      | 65                  | 1200            | 1.54                                     | 0.54                                               |
+| 0.25               | 0.1                       | 130                 | 1000            | 2.31                                     | 1.31                                               |
+| 0.25               | 0.25                      | 325                 | 430             | 1.42                                     | 1.68                                               |
+| 0.25               | 0.5                       | 650                 | 25              | 1.96                                     | 0.96                                               |
+| 0.5                | 0                         | 0                   | 1300            |                                          |                                                    |
+| 0.5                | 0.05                      | 65                  | 1100            | 3.08                                     | 2.08                                               |
+| 0.5                | 0.1                       | 130                 | 1000            | 2.31                                     | 1.31                                               |
+| 0.5                | 0.25                      | 325                 | 480             | 2.52                                     | 1.52                                               |
+| 0.5                | 0.5                       | 650                 | 31              | 1.95                                     | 0.95                                               |
+
+Table 1: TODO
+
+
+| Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
+|--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
+| 0.15               | 0                         | 0                   | 1300            |                                          |                                                    |
+| 0.15               | 0.05                      | 4                   | 1200            | 25                                       | 24                                                 |
+| 0.15               | 0.1                       | 8                   | 1200            | 12.5                                     | 11.5                                               |
+| 0.15               | 0.25                      | 20                  | 1100            | 10                                       | 9                                                  |
+| 0.15               | 0.5                       | 40                  | 820             | 12                                       | 11                                                 |
+| 0.25               | 0                         | 0                   | 1300            |                                          |                                                    |
+| 0.25               | 0.05                      | 4                   | 1300            | 0                                        | 0                                                  |
+| 0.25               | 0.1                       | 8                   | 1300            | 0                                        | 0                                                  |
+| 0.25               | 0.25                      | 20                  | 1200            | 5                                        | 4                                                  |
+| 0.25               | 0.5                       | 40                  | 1100            | 5                                        | 4                                                  |
+| 0.5                | 0                         | 0                   | 1300            |                                          |                                                    |
+| 0.5                | 0.05                      | 4                   | 1300            | 0                                        | 0                                                  |
+| 0.5                | 0.1                       | 8                   | 1200            | 12.5                                     | 11.5                                               |
+| 0.5                | 0.25                      | 20                  | 1200            | 5                                        | 4                                                  |
+| 0.5                | 0.5                       | 40                  | 1100            | 5                                        | 4                                                  |
+
+Table 2: TODO
 
 ## Bibliography 
 [Gómez, J. M. and Verdú, M. Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic.](https://www.nature.com/articles/srep43467) Sci. Rep. 7, 43467; doi: 10.1038/srep43467 (2017).
