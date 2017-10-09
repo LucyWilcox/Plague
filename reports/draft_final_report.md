@@ -9,9 +9,19 @@ Gomez and Verdu use historical trade and pilgrimage route data to create a netwo
 
 To do this, we iterate through a set quarantine rates which determine what percentage of cities are quarantined and are removed from the graph. For each transmission and quarantine rate, we removed a percentage of the cities (nodes) before the simulation ran, as per the quarantine rate. Once these cities are removed, we begin the infection in a single city in central Asia, as listed by the original supplementary material. For every edge connecting this city to another, there is a percent chance of infection spread equal to the transmission rate. Every time step allows each city to attempt to infect each of its neighbors once. Cities are allowed to be reinfected, which increases the overall infection count of the simulation. We also keep track of the number of cities infected, regardless of the number of times they have been re-infected. We run this simulation for 100 time steps. For each quarantine and transmission rate, we run the simulation 100 times before taking the average number of total infections and number of infected cities for each set of rates. For removing hubs, we repeat this process, but only cities with more than 6 edges are considered for removal.
 
-We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate as seen in Figure 1. If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases at an almost linear rate as seen in Figure 2. 
+We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate as seen here:
 
-When we compare the number of cities infected for any city removed to the number of cities infected when only hubs are removed, we find that while the number for low quarantine rates are very similar, as the quarantine rate increases, the number of cities infected with only hubs being quarantined is much larger. This is shown in Figure 3 and Figure 4. We believe that this is due to the fact that there are only 80 cities which meet our criteria of hub cities compared to the total 1300 cities, this means that when the quarantine rate is 0.25% there are 325 cities being quarantined in the non-hub only model compared to 20 cities in the hub only model. 
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_city_quarantined_plots.png" width="500">
+
+If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases at an almost linear rate as seen here:
+
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/quarantined_hubs_plots.png" width="500">
+
+When we compare the number of cities infected for any city removed to the number of cities infected when only hubs are removed, we find that while the number for low quarantine rates are very similar, as the quarantine rate increases, the number of cities infected with only hubs being quarantined is much larger:
+
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_heatmap.png" width="400"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/hub_heatmap.png" width="400">
+
+We believe that this is due to the fact that there are only 80 cities which meet our criteria of hub cities compared to the total 1300 cities, this means that when the quarantine rate is 0.25% there are 325 cities being quarantined in the non-hub only model compared to 20 cities in the hub only model. 
 
 Though both of these relationships are linear, we find that they have different slopes, this can help us determine the effectiveness of quarantining hubs. The number of cities not infected with per city quarantined is 7.6 on average when only hub cities are quarantined and 2.3 when any city can be quarantined. When the number of cities not infected excludes the quarantined cities the average cities not infected drops to 6.9 when only hub cities are quarantined  and 1.5 when any city can be quarantined. Full data can be found in Table 1 and Table 2. This shows us that if a limited number of cities can be quarantined it is more effective to quarantine hub cities.
 
@@ -23,30 +33,6 @@ From these results, we can see that if 50% of the cities are under quarantine, l
 A more refined model might remove cities as the simulation progresses, depending on the number of infected neighboring cities as well as the quarantine rate. The model also could include an inverse relationship between transitivity and distance, as disease is less likely to pass from distant cities.
 
 ## Appendix
-
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_city_quarantined_plots.png" width="500">
-
-**Figure 1**: Graphs show the total number of infections and total cities infected for different transmission rates and quarantine response rates. In this set of graphs all cities may be quarantined.
-
-_________________________________________________________________________________________
-
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/quarantined_hubs_plots.png" width="500">
-
-**Figure 2**: Graphs show the total number of infections and total cities infected for different transmission rates and quarantine response rates. In this set of graphs only hub cities may be quarantined.
-
-_________________________________________________________________________________________
-
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/any_heatmap.png" width="500">
-
-**Figure 3**: A heatmap of the total number of cities infected with different transmission and quarantine rates where all cities can be quarantined.
-
-_________________________________________________________________________________________
-
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/hub_heatmap.png" width="500">
-
-**Figure 4***: A heatmap of the total number of cities infected with different transmission and quarantine rates where only hub cities can be quarantined.
-
-_________________________________________________________________________________________
 
 | Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
 |--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
