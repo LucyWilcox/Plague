@@ -1,4 +1,4 @@
-transmition_rate,percent_quarantine,total_infections,num_cities_infected
+transmission,quarantine,total_infections,num_cities_infected
 0.15,0,23840,1260
 0.15,0,24273,1274
 0.15,0,29188,1276
