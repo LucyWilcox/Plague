@@ -18,7 +18,7 @@ What is %C in your graph? Is it % cooperators? What is time? Is it steps? Explai
 
 ##### Interpretation: Does the draft report interpret the results as an answer to the motivating question?  Does the argument hold water?
 
-I'm unsure of how you are interpreting your replication of their model, I can't tell what is part of their experiment and what might be an extension. I think it's all replication, but then you talk about the experiment, thought it's not clear what the experiment is for so I assume it's replication. Also why would defectors and cooperators converge? Why wouldn't they?
+I'm unsure of how you are interpreting your replication of their model, I can't tell what is part of their experiment and what might be an extension. I think it's all replication, but then you talk about the experiment, though it's not clear what the experiment is for so I assume it's replication. Also why would defectors and cooperators converge? Why wouldn't they?
 
 ##### Replication: Are the results in the report consistent with the results from the original paper? 
 
