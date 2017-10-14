@@ -21,11 +21,14 @@ We find that as the quarantine rate goes up, the number of infections and cities
 
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_all.png" width="500">
 
-The slope of the total
+The decrease in the number of cities infected and the number of infections follow the same pattern when all cities are able to be quarantined. However, the slope in the total number of infections is different for each transmission rate. We will be focusing mainly on the number of cities infected as a representation of how badly the disease has spread.
 
-If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases at an almost linear rate as seen here:
+If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases more quickly as the quarantien response rate increases. This behavior is more evident at higher trasmission rates:
 
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/quarantined_hubs_plots.png" width="500">
+
+The number of cities infected is similar for each quarantine rate when the transmission rate is 0.5 and 0.75. However, when the transmission rate is only 0.15% quarantining 76 (0.95%) of the hubs causes the number of cities infected to drops to around 160. This data can be seen in detail in Table 1 and Table 2.
+
 
 When we compare the number of cities infected for any city removed to the number of cities infected when only hubs are removed, we find that while the number for low quarantine rates are very similar, as the quarantine rate increases, the number of cities infected with only hubs being quarantined is much larger:
 
@@ -42,47 +45,40 @@ A more refined model might remove cities as the simulation progresses, depending
 
 ## Appendix
 
-| Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
-|--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
-| 0.15               | 0                         | 0                   | 1200            |                                          |                                                    |
-| 0.15               | 0.05                      | 65                  | 1100            | 3.08                                     | 2.08                                               |
-| 0.15               | 0.1                       | 130                 | 890             | 3.15                                     | 2.15                                               |
-| 0.15               | 0.25                      | 325                 | 360             | 2.89                                     | 1.89                                               |
-| 0.15               | 0.5                       | 650                 | 21              | 1.97                                     | 0.97                                               |
-| 0.25               | 0                         | 0                   | 1300            |                                          |                                                    |
-| 0.25               | 0.05                      | 65                  | 1200            | 1.54                                     | 0.54                                               |
-| 0.25               | 0.1                       | 130                 | 1000            | 2.31                                     | 1.31                                               |
-| 0.25               | 0.25                      | 325                 | 430             | 1.42                                     | 1.68                                               |
-| 0.25               | 0.5                       | 650                 | 25              | 1.96                                     | 0.96                                               |
-| 0.5                | 0                         | 0                   | 1300            |                                          |                                                    |
-| 0.5                | 0.05                      | 65                  | 1100            | 3.08                                     | 2.08                                               |
-| 0.5                | 0.1                       | 130                 | 1000            | 2.31                                     | 1.31                                               |
-| 0.5                | 0.25                      | 325                 | 480             | 2.52                                     | 1.52                                               |
-| 0.5                | 0.5                       | 650                 | 31              | 1.95                                     | 0.95                                               |
+| Transmission Rate | 0.15            | 0.5             | 0.75           |
+|-------------------|-----------------|-----------------|----------------|
+| Quarantine Rate   | Cities Infected | Cities Infected | Cities Infected|
+| 0                 | 1272.95         | 1295.97         | 1296           |
+| 0.05              | 1084.48         | 1175.58         | 1149.57        |
+| 0.15              | 713.99          | 845.01          | 826.23         |
+| 0.25              | 348.31          | 562.74          | 556.17         |
+| 0.35              | 93.2            | 195.86          | 210.14         |
+| 0.45              | 31.17           | 42.26           | 58.44          |
+| 0.55              | 6.14            | 6.05            | 9.89           |
+| 0.65              | 3.04            | 2.15            | 3.08           |
+| 0.75              | 1.7             | 1.68            | 1.53           |
+| 0.85              | 1.14            | 1.09            | 1.05           |
+| 0.95              | 1               | 1               | 1              |
 
-**Table 1**: This table shows the number of cities quarantined, cities infected, and the number of cities not infected per city quarantine where any city can be quarantined. We show the number of cities not infected per city quarantined both including and excluding the number of quarantined cities in the total cities not infected.
-
+**Table 1**: This table shows the average number of cities infected per each quarantine and transimission rate where any city can be quarantined.
 _________________________________________________________________________________________
 
-| Transmission Rate  | Quarantine Rate           | Cities Quarantined  | Cities Infected | Cities Not Infected per Quarantined City | Cities Not Infected in Graph per Quarantined City  |
-|--------------------|---------------------------|---------------------|-----------------|------------------------------------------|----------------------------------------------------|
-| 0.15               | 0                         | 0                   | 1300            |                                          |                                                    |
-| 0.15               | 0.05                      | 4                   | 1200            | 25                                       | 24                                                 |
-| 0.15               | 0.1                       | 8                   | 1200            | 12.5                                     | 11.5                                               |
-| 0.15               | 0.25                      | 20                  | 1100            | 10                                       | 9                                                  |
-| 0.15               | 0.5                       | 40                  | 820             | 12                                       | 11                                                 |
-| 0.25               | 0                         | 0                   | 1300            |                                          |                                                    |
-| 0.25               | 0.05                      | 4                   | 1300            | 0                                        | 0                                                  |
-| 0.25               | 0.1                       | 8                   | 1300            | 0                                        | 0                                                  |
-| 0.25               | 0.25                      | 20                  | 1200            | 5                                        | 4                                                  |
-| 0.25               | 0.5                       | 40                  | 1100            | 5                                        | 4                                                  |
-| 0.5                | 0                         | 0                   | 1300            |                                          |                                                    |
-| 0.5                | 0.05                      | 4                   | 1300            | 0                                        | 0                                                  |
-| 0.5                | 0.1                       | 8                   | 1200            | 12.5                                     | 11.5                                               |
-| 0.5                | 0.25                      | 20                  | 1200            | 5                                        | 4                                                  |
-| 0.5                | 0.5                       | 40                  | 1100            | 5                                        | 4                                                  |
+| Transmission Rate | 0.15            | 0.5             | 0.75            |
+|-------------------|-----------------|-----------------|-----------------|
+| Quarantine Rate   | Cities Infected | Cities Infected | Cities Infected |
+| 0                 | 1266.46         | 1296            | 1296            |
+| 0.05              | 1253.68         | 1290.05         | 1290.08         |
+| 0.15              | 1213.54         | 1277.23         | 1277.46         |
+| 0.25              | 1111.31         | 1261.11         | 1262.46         |
+| 0.35              | 1061.05         | 1243.86         | 1243.71         |
+| 0.45              | 957.69          | 1224.24         | 1220.59         |
+| 0.55              | 817.31          | 1194.76         | 1199.66         |
+| 0.65              | 573.79          | 1162.17         | 1167.24         |
+| 0.75              | 474.32          | 1115.44         | 1115.26         |
+| 0.85              | 265.76          | 1056.59         | 1052.61         |
+| 0.95              | 159.55          | 964.76          | 967.07          |
 
-**Table 2**: This table shows the number of cities quarantined, cities infected, and the number of cities not infected per city quarantine where only hub cities can be quarantined. We show the number of cities not infected per city quarantined both including and excluding the number of quarantined cities in the total cities not infected.
+**Table 2**:  This table shows the average number of cities infected per each quarantine and transimission rate where only hubs can be quarantined.
 
 ## Bibliography 
 [Gómez, J. M. and Verdú, M. Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic.](https://www.nature.com/articles/srep43467) Sci. Rep. 7, 43467; doi: 10.1038/srep43467 (2017).
