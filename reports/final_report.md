@@ -5,6 +5,8 @@
 **Abstract** 
 In Gomez and Verdu’s paper *Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic*. They model infection patterns in Europe and Asia due to the plague and find that hub cities are reinfected more frequently. We extended this work by adding a quarantine response to examine how the spread of the diseases is impacted by varying responses. We also examine the result of quarantining only hub cities. To do this we removed nodes from our network according to a certain rate. We find that quarantining hub cities prevents a larger number of cities from being infected on a per city quarantined basis, but has less of an overall impact due to the small number of hubs.
 
+_____________________________________________________________
+
 Gomez and Verdu use historical trade and pilgrimage route data to create a network between cities in Europe and Asia during the plague. They start the plague and different Asian cities and let it run through their network with varying transmission rates. Our model uses these same data to create a network, and we simulate their reinfection pattern. 
 
 We find that the nodes in our model have a similar degree distribution to the original model. In the figures below our degree boxplot is displayed on the left and Gomez and Verdu's in on the right. 
