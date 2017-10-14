@@ -19,13 +19,13 @@ To do this, we iterate through a set quarantine rates (0, 0.05, 0.1, 0.15, 0.25,
 
 We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate between rates of 0 and 0.5, then flattens out around 0 regardless of the transmission rate:
 
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_all.png" width="500">
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_all2.png" width="500">
 
 The decrease in the number of cities infected and the number of infections follow the same pattern when all cities are able to be quarantined. However, the slope in the total number of infections is different for each transmission rate. We will be focusing mainly on the number of cities infected as a representation of how badly the disease has spread.
 
 If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases more quickly as the quarantine response rate increases. This behavior is more evident at higher transmission rates:
 
-<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_hub.png" width="500">
+<img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_hub2.png" width="500">
 
 The number of cities infected is similar for each quarantine rate when the transmission rate is 0.5 and 0.75. However, when the transmission rate is 0.15 the. This data can be seen in detail in Table 1 and Table 2.
 
