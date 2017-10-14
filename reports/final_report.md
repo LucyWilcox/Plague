@@ -11,7 +11,9 @@ Gomez and Verdu use historical trade and pilgrimage route data to create a netwo
 
 We find that the nodes in our model have a similar degree distribution to the original model. In the figures below our degree boxplot is displayed on the left and Gomez and Verdu's is on the right: 
 
+<p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/initial_degree_boxplot.png" width="400"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/theirdegree2.png" width="400">
+</p>
 
 However, some elements of our model did not match Gomez and Verdu's. Despite using the same data sets and following the code that they publish. For example, the number of cities in our graph is 1300 compared to their 1311 cities. We also do not have ids for many of the possible starting cities that Gomez and Verdu name. Our closeness coefficient distribution is about three degrees of magnitude higher than theirs but otherwise very similar. We are not sure if this is due to differences between the functions that we each use to calculate closeness or if it is due to a difference in our model.
 
@@ -21,13 +23,17 @@ To do this, we iterate through a set quarantine rates: 0, 0.05, 0.1, 0.15, 0.25,
 
 We find that as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate between quarantine rates of 0 and 0.5, then flattens with few infected cities regardless of the transmission rate:
 
+<p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_all2.png" width="500">
+</p>
 
 The decrease in the number of cities infected and the number of infections follows the same pattern when all cities are able to be quarantined. However, the slope in the total number of infections is different for each transmission rate. We will be focusing mainly on the number of cities infected as a representation of how badly the disease has spread.
 
 If only hubs are considered for quarantine the number of infection and the number of cities infected also decreases more quickly as the quarantine response rate increases. This behavior is more evident at higher transmission rates:
 
+<p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/plot_hub2.png" width="500">
+</p>
 
 The number of cities infected is similar for each quarantine rate when the transmission rate is 0.5 and 0.75. However, when the transmission rate is 0.15, fewer cities are infected at each quarantine rate. This data can be seen in detail in Table 1 and Table 2.
 
@@ -35,7 +41,9 @@ When we compare the number of cities infected for any city removed to the number
 
 To answer our question of what the maximum number of cities saved per city quarantined is, we determine that when the transmission rate is 0.15% quarantining 76 (0.95%) of the hubs causes the number of cities infected to drops to around 160. To achieve similar results when quarantining any city about 300 cities would need to be quarantined. We display this by graphing the ratio of non-infected cities in the graph to cities under quarantine (removed from the graph) for our model where any city can be quarantined and where only hub cities can be quarantined.
 
+<p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/safe_per_quarantine_all.png" width="400"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/safe_per_quarantine_hub.png" width="400">
+</p>
 
 This shows us that when the transmission rate is low, at 0.15, it is more effective to quarantine hubs. Each hub quarantined saves between 6 and 14 other cities compared to between 2.5 and near 0 when any city can be quarantined. At higher transmission rates the number of cities saved per quarantined hub is below 2, this is similar to when any city is quarantined. 
 
