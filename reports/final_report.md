@@ -60,7 +60,7 @@ If our model accurately reflects the spread of disease, we would suggest focusin
 
 A more refined model might remove cities as the simulation progresses, depending on the number of infected neighboring cities as well as the quarantine rate. The model also could include an inverse relationship between transitivity and distance, as the disease is less likely to pass from distant cities. Future work could include testing the model with a lower definition of what a hub is to see if there is a point where the number of cities saved per city quarantined is mostly constant regardless of the quarantine rate.
 
-Our simulation can be run with the code found [here](http://localhost:8890/notebooks/epidemic_simulator.ipynb), and the processing of results can be done [here](http://localhost:8890/notebooks/csv_plotting.ipynb).
+To repeat our experiment, fork and clone [this repository](https://github.com/LucyWilcox/Plague/tree/master/code). It contains the .py and datafiles needed to run the simulation. Our simulation can be run with the code found [here](http://localhost:8890/notebooks/epidemic_simulator.ipynb), and the processing of results can be done [here](http://localhost:8890/notebooks/csv_plotting.ipynb).
 
 ## Bibliography 
 [Gómez, J. M. and Verdú, M. Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic.](https://www.nature.com/articles/srep43467) Sci. Rep. 7, 43467; doi: 10.1038/srep43467 (2017).
