@@ -7,28 +7,36 @@
 In Gomez and Verdu’s paper *Network theory may explain the vulnerability of medieval human settlements to the Black Death pandemic*, they model infection patterns in Europe and Asia due to the plague to determine how transitivity and network centrality influence the spread of disease, and find that hub cities, which have high centrality and transitivity, are reinfected more frequently. We extend this work by adding a quarantine response, modeled by removing cities from the graph. We examine the impact of quarantining increasing percentages of the total number of cities and of only hub cities. We find that each quarantined hub city prevents a larger number of other cities from becoming infected, but has less of an overall impact due to the small number of hub cities.
 _____________________________________________________________
 
-Gomez and Verdu use historical trade and pilgrimage route data to create a network representing cities and major travel routes in Europe and Asia during the plague. They start the plague in different Asian cities and let it run through their network with varying transmission rates to determine how network centrality and transitivity influence the spread of the disease. Network centrality is the impact nodes have on the network based on their degree and their neighbors’ degrees, and transitivity is the number of triangle forms in the network compared to the number of connected triplets. Our model uses these same data as much as possible to create a network, with which we simulate the spread of infection for different transmission rates, where the transmission rate is the chance that infection will spread along a connecting edge each timestep. We begin the infection in a single city in central Asia, as listed by the original supplementary material. Every time step allows each city to attempt to infect each of its neighbors once. Cities are allowed to be reinfected, which increases the overall infection count of the simulation. We keep track of the number of cities infected, regardless of the number of times they have been re-infected as well as the total number of infections. In addition, our model examines the effects of varying quarantine rates. For each quarantine rate, we remove a corresponding percentage of the cities (nodes) before the simulation runs. This models a city completely shutting down any incoming or outgoing trade. Once these cities are removed, we run the simulation 100 times before taking the average number of total infections and number of infected cities for each set of rates. This is the Any City model. We repeat this process for hub cities, where hub cities are defined as cities with a degree of seven or more, the Hub City model. There are 80 such cities in the original graph. We then compare the effects of these two models to see which--quarantining all cities or just the central ones--has a greater impact on the overall health of the network. We consider this to be a lower number of total cities infected by the end of the simulation.
+Gomez and Verdu use historical trade and pilgrimage route data to create a network representing cities and major travel routes in Europe and Asia during the plague. They start the plague in different Asian cities and let it run through their network with varying transmission rates to determine how network centrality and transitivity influence the spread of the disease. Network centrality is the impact nodes have on the network based on their degree and their neighbors’ degrees, and transitivity is the number of triangle forms in the network compared to the number of connected triplets. 
+
+Our model uses these same data as much as possible to create a network, with which we simulate the spread of infection for different transmission rates, where the transmission rate is the chance that infection will spread along a connecting edge each timestep. We begin the infection in a single city in central Asia, as listed in the original supplementary material. Every time step allows each city to attempt to infect each of its neighbors once. Cities are allowed to be reinfected, which increases the overall infection count of the simulation. We keep track of the number of cities infected, regardless of the number of times they have been re-infected as well as the total number of infections. In addition, our model examines the effects of varying quarantine rates. For each quarantine rate, we remove a corresponding percentage of the cities (nodes) before the simulation runs. This models a city completely shutting down any incoming or outgoing trade. Once these cities are removed, we run the simulation 100 times before taking the average number of total infections and number of infected cities for each set of rates. This is the Any City model. We repeat this process for hub cities, where hub cities are defined as cities with a degree of seven or more, the Hub City model. There are 80 such cities in the original graph. We then compare the effects of these two models to see which--quarantining all cities or just the central ones--has a greater impact on the overall health of the network. We consider this to be a lower number of total cities infected by the end of the simulation.
 
 We find that the nodes in our network do not have an identical degree distribution to the original model. Nodes in Gomez and Verdu’s model have slightly higher degree than in our model as seen in Fig. 1 and 2.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/initial_degree_boxplot.png" width="380"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/theirdegree3.png" width="420">
+ <br><br>
+  <caption align="bottom"><b>Fig. 1 (left) and Fig. 2 (right) </b></caption>
 </p>
 
 However, some elements of our model did not match Gomez and Verdu's, despite using the same data sets and following the code that they publish. For example, the number of cities in our graph is 1300 compared to their 1311 cities. We also do not have ids for many of the possible starting cities that Gomez and Verdu name. Despite these differences, our model runs in a similar manner.
 
-TODO: We need to introduce Fig. 3
+In Fig. 3 we graph infected cities and total infections in the Any City model to see how the number of infected cities decreases with more quarantined cities.
 
 <p align="center">
 <img src="https://github.com/LucyWilcox/Plague/blob/master/reports/total_infections_any.png" width="500">
+  <br><br>
+  <caption align="bottom"><b>Fig. 3</b></caption>
 </p>
 
 Fig. 3 shows that in the Any City model, as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate between quarantine rates of 0 and 0.5, then flattens with few infected cities regardless of the transmission rate. This is because at high quarantine response rates, the initial city infected or those directly around it are likely to be quarantined, preventing any further spread of the disease. The transmission rates, while noticeably different for low quarantine rates, do not have much impact as quarantine rates pass 50%.
 
-TODO: We need to introduce Fig. 4
+In Fig. 4 is the same as Fig. 3 but uses data from the Hub City model.
 
 <p align="center">
 <img src="https://github.com/LucyWilcox/Plague/blob/master/reports/total_infections_hubs.png" width="500">
+  <br><br>
+  <caption align="bottom"><b>Fig. 4</b></caption>
 </p>
 
 In Fig. 4, we see that while increasing quarantine responses still cause a decrease in the spread of infection in the Hub City model, the general slope of the line is shallower, and even at nearly all hub cities quarantined, all but the lowest transmission rate infect a large percentage of the total cities, thus resulting in a generally less healthy network if the only metric is the number of infected cities. This does not mean, however, that quarantining hub cities is ineffectual.
@@ -38,6 +46,8 @@ Fig. 5 and 6 show the ratio of uninfected, unquarantined cities to number of cit
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/safe_per_quarantine_all.png" width="400"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/safe_per_quarantine_hub.png" width="400">
+  <br><br>
+  <caption align="bottom"><b>Fig. 5 (left) and Fig. 6 (right) </b></caption>
 </p>
 
 Fig. 5 and 6 demonstrate that at low transmission rates, such as 0.15, it is more effective to quarantine hubs. Each hub quarantined saves 6-14 other cities compared to 1-2.5 in the Any City model. At higher transmission rates, the number of cities saved per quarantined hub is generally below 2, so the two methods have similar impact.
