@@ -16,7 +16,7 @@ We find that the nodes in our network do not have an identical degree distributi
 <p align="center">
 <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/initial_degree_boxplot.png" width="380"> <img src="https://raw.githubusercontent.com/LucyWilcox/Plague/master/reports/theirdegree3.png" width="420">
  <br><br>
-  <caption align="bottom"><b>Fig. 1 (left) and Fig. 2 (right) </b></caption>
+  <caption align="bottom"><b>Fig. 1 (left) and Fig. 2 (right) </b> While similar, Gomez' and Verdu's network has a slightly higher degree.</caption>
 </p>
 
 However, some elements of our model did not match Gomez and Verdu's, despite using the same data sets and following the code that they publish. For example, the number of cities in our graph is 1300 compared to their 1311 cities. We also do not have ids for many of the possible starting cities that Gomez and Verdu name. Despite these differences, our model runs in a similar manner.
@@ -31,7 +31,7 @@ In Fig. 3 we graph infected cities and total infections in the Any City model to
 
 Fig. 3 shows that in the Any City model, as the quarantine rate goes up, the number of infections and cities infected decreases at an almost linear rate between quarantine rates of 0 and 0.5, then flattens with few infected cities regardless of the transmission rate. This is because at high quarantine response rates, the initial city infected or those directly around it are likely to be quarantined, preventing any further spread of the disease. The transmission rates, while noticeably different for low quarantine rates, do not have much impact as quarantine rates pass 50%.
 
-In Fig. 4 is the same as Fig. 3 but uses data from the Hub City model.
+The results in Fig. 4 underwent the same process as those shown in Fig. 3 but use data from the Hub City model.
 
 <p align="center">
 <img src="https://github.com/LucyWilcox/Plague/blob/master/reports/total_infections_hubs.png" width="500">
@@ -56,7 +56,7 @@ As more hubs are quarantined, the number of cities saved per quarantine is highe
 
 From our results, we see that if 50% of cities in the Any City model are under quarantine, less than 10% of the remaining cities will become infected. In effect, this has shut down the spread of disease, no matter what the transmission rate. This low number might be because, at this rate of quarantine, the starting city has a 50% chance of quarantining itself, preventing the spread of the disease. A similar result of shutting down the spread of disease can be achieved by quarantining almost all hub cities at low transmissions rates but this method is not effective at higher transmission rates.
 
-If our model accurately reflects the spread of disease, we would suggest focusing on quarantining hubs at lower transmission rates and quarantining as many cities as possible, up to 50%, at higher rates.
+If our model accurately reflects the spread of disease, we would suggest focusing on quarantining hubs at lower transmission rates and quarantining as many cities as possible, up to 50%, for highly transmissive diseases.
 
 A more refined model might remove cities as the simulation progresses, depending on the number of infected neighboring cities as well as the quarantine rate. The model also could include an inverse relationship between transitivity and distance, as the disease is less likely to pass from distant cities. Future work could include testing the model with a lower definition of what a hub is to see if there is a point where the number of cities saved per city quarantined is mostly constant regardless of the quarantine rate.
 
